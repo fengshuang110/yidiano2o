@@ -1,0 +1,100 @@
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+</div>
+</div>
+</nav>
+<div class="container text-info">
+  <div class="alert alert-info alert-dismissible size-14 margin15-top" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <img src="/images/need/need-title-icon.png" class="icon-distance">您的个人资料还没有达到接包要求&nbsp;&nbsp;<a href="#" class="alert-link">立即去完善资料 ></a>
+    </div>
+</div>
+<!--主体开始-->
+<div class="container need-main">
+  <div class="check-page person-center center-pj need-main">
+    <div class="check-page-gray">
+      <div class="col-md-2 text-center">
+          <img class="img-circle" src="/images/index/default-img.png" width="60px" height="60px"/>
+      </div>
+      <div class="col-md-5 need-main">
+        <p class="release-title size-14">公司名称：<?php echo $company_profile['company_name']; ?></p>
+        <p class="release-title size-14">
+        发包金额：<span class="text-warning icon-distance">￥130,000</span>
+        发包数量：<span class="text-warning icon-distance">（16）</span>
+        </p>
+      </div>
+      <div class="col-md-5 pull-right text-right">
+      <p class="size-14 top-distance30">勋章：
+          <img src="/images/need/person-xz-icon.png" class="icon-distance">
+          <span class="text-warning icon-distance">黄金徽记</span>
+          身份认证：已认证
+      </p>
+      </div>
+    </div>
+    <!--企业详细信息-->
+    <div class="company-lookdetail">
+      <div class="release">
+        <div class="col-md-2 clear-left">负责人：<span class="text-info"><?php echo $company_profile['leader']; ?></span></div>
+        <div class="col-md-2">企业类型：<span class="text-info"><?php echo $company_profile['type']; ?></span></div>
+        <div class="col-md-2">
+        规模：<span class="text-warning"><?php echo $company_profile['scale']; ?></span>
+        <span class="text-info">人</span></div>
+      </div>
+      <div class="top-distance30">
+         企业简介：<br/><br/>
+         <span class="text-info"><?php echo $company_profile['desc']; ?></span>
+      </div>
+      <div class="top-distance30">
+         公司地址：<br/><br/>
+         <span class="text-info"><?php echo $company_profile['address']; ?></span>
+      </div>
+    </div>
+  </div>
+  <!--评价-->
+      <div class="right-title per-center-title">评价</div>
+  <div class="check-page center-pj">
+  <div class="text-info size-14 assess company-lookpj">综合评价：
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+  </div>
+  <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+    <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+
+    <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+  <p class="text-center index-main"><img src="/images/need/pj-more.png"></p>
+  </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

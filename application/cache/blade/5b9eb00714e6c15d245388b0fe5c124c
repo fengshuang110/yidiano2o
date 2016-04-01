@@ -1,0 +1,144 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是开发者>WOKE平台><a href="#"><span class="text-warning">我的订单</span></a></div>
+</div>
+</div>
+</nav>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+		<div class="col-md-2">
+		<table class="table table-hover need-left size-14">
+			<thead><tr><td> 开发者中心</td></tr></thead>
+			<tbody>
+			<tr><td>
+         <a href="/user/profile"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>个人中心
+      	 </a></td></tr>
+				<tr><td>
+         <a href="/user/settings"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>账号安全
+      	 </a></td></tr>
+        	<tr><td>
+          <a href="/user/resume"><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span>
+        	个人简历
+         </a></td></tr>
+         
+		<tr><td>
+           <a href="/user/contacts"><span class="glyphicon glyphicon-user pull-left icon-distance"></span>
+        人脉</a></td></tr>
+				<tr><td>
+           <a href="/user/evaluation"><span class="glyphicon glyphicon-comment pull-left icon-distance"></span>
+        评价</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+  <!--右侧-->
+  <div class="col-md-10 clear-both">
+
+    <!--内容-->
+    <div class="tab-content">
+      <div class="check-page center-pj">
+        <div class="text-info size-14 assess">综合评价：
+          <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+          <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+          <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+          <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+          <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+        </div>
+
+        <div class="text-info size-14 top-distance30">
+          <div class="col-md-6 clear-left pull-left">
+           专业技能：
+           <span class="icon-distance"><img src="/images/need/pj-icon-02.png"></span>
+           <span class="icon-distance"><img src="/images/need/pj-icon-02.png"></span>
+           <span class="icon-distance"><img src="/images/need/pj-icon-02.png"></span>
+           <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+           <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+         </div>
+         <div class="col-md-6 clear-left pull-right">
+          进度把控：
+          <span class="icon-distance"><img src="/images/need/pj-icon-03.png"></span>
+          <span class="icon-distance"><img src="/images/need/pj-icon-03.png"></span>
+          <span class="icon-distance"><img src="/images/need/pj-icon-03.png"></span>
+          <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+          <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="text-info size-14 assess">
+        <div class="col-md-6 clear-left pull-left">
+         完成质量：
+         <span class="icon-distance"><img src="/images/need/pj-icon-04.png"></span>
+         <span class="icon-distance"><img src="/images/need/pj-icon-04.png"></span>
+         <span class="icon-distance"><img src="/images/need/pj-icon-04.png"></span>
+         <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+         <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+       </div>
+       <div class="col-md-6 clear-left pull-right">
+        沟通能力：
+        <span class="icon-distance"><img src="/images/need/pj-icon-05.png"></span>
+        <span class="icon-distance"><img src="/images/need/pj-icon-05.png"></span>
+        <span class="icon-distance"><img src="/images/need/pj-icon-05.png"></span>
+        <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+        <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+      </div>
+    </div> 
+    <!--右侧-->
+    <div class="need-main">
+      <ul class="nav nav-pills row text-left clear-left" role="tablist">
+        <li role="presentation" class="col-md-2 text-center active clear-left">
+          <a href="/home" aria-controls="home" role="tab" data-toggle="tab">我的评价</a>
+        </li>
+        <li role="presentation" class="col-md-2 text-center">
+          <a onclick="location.href='/user/evaluation?type=2';">他人评价</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+			<?php foreach($evaluates as $item): ?>
+           <div class="pj-detail-every">
+              <span class="pull-left">
+                <p class="size-14"><?php echo $item['comment']; ?></p>
+                <p class="release-title text-info">项目名称：征集优秀行业模板，要求有一定行业经验或者信息化经验</p>
+              </span>
+              <span class="pull-right text-info">
+                <span class="icon-distance"><?php echo $session_user['username']; ?></span>
+                <span class=""><?php echo date('Y-m-d',$item['created_at']); ?></span>
+              </span>
+              <div class="clearfix"></div>
+            </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.developer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

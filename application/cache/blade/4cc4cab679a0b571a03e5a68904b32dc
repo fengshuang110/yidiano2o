@@ -1,0 +1,246 @@
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+</div>
+</div>
+</nav>
+<div class="container text-info">
+	<div class="alert alert-info alert-dismissible size-14 margin15-top" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <img src="/images/need/need-title-icon.png" class="icon-distance">您尚未完成认证，会影响您发布项目，立即认证可获得<span class="text-warning">50</span>元红包&nbsp;&nbsp;<a href="#" class="alert-link">立即去认证 ></a>
+    </div>
+</div>
+<!--主体开始-->
+<div class="container need-main">
+  <!--右侧-->
+  <div class="col-md-12 clear-both">
+  <!--个人资料-->
+      <div class="check-page person-center">
+        <div class="col-md-5 clear-both center-left">
+          <div class="col-md-12 center-tx clear-both">
+            <div class="col-md-1"></div>
+          <div class="col-md-4 text-center">
+            <img class="img-circle" src="/images/index/default-img.png" width="60px" height="60px"/>
+          </div>
+          <div class="col-md-1"></div>
+
+
+          <div class="col-md-6 clear-both text-center">
+             <p class="text-warning size-18">￥130,000</p><br/>
+             <p class="size-14">接包收入</p>
+          </div>
+
+          </div>
+          <div class="col-md-12 center-lv clear-both">
+            <div class="col-md-6">
+            <p class="pull-left icon-distance col-m2 text-warning size-14" style="font-weight: bold">LV5</p>
+             <div class="progress col-md-6 clear-both pull-left icon-distance">
+              <div class="progress-bar pull-left" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <span class="sr-only">60% Complete</span>
+              </div>
+            </div>
+            <p class="pull-left col-md-2 clear-both">
+              <span class="text-warning">80/</span><span>100</span>
+            </p>
+            <div class="clearfix"></div>
+            <div class="size-14 project-need">
+            勋章：<img src="/images/need/person-xz-icon.png">
+            <span class="text-warning">(黄金徽记)</span>
+            </div>
+            <div class="size-14 project-need">
+              身份认证：已认证
+            </div>
+          </div>
+          <div class="col-md-6 center-lv clear-both text-center">
+              <p class="text-warning size-18">（16）</p><br/>
+              <p class="size-14">接包数量</p>
+          </div>
+          </div>
+
+        </div>
+        <div class="col-md-7 person-detail size-14">
+          <div class="col-md-12 clear-both">
+              <div class="col-md-6 clear-left">姓名：<?php echo $user_profile['name']; ?></div>
+              <div class="col-md-6">邮箱： <?php echo $user_profile['email']; ?></div>
+          </div>
+           <div class="col-md-12 clear-both top-distance30">
+              <div class="col-md-6 clear-left">电话:<?php echo $user_profile['telephone']; ?></div>
+          	  <div class="col-md-6">擅长技能：
+	          	    <?php foreach($user_profile['tags'] as $tag): ?>
+		            <span class="label label-default blacktext"><?php echo $tag; ?></span>
+					<?php endforeach; ?>
+          	  </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="top-distance30">
+            自我介绍：<br/><br/>
+            <span class="person-js">
+            <?php echo $user_profile['intro']; ?>
+
+            </span>
+          </div>
+        </div>
+      </div>
+  <!--交易记录-->
+      <div class="right-title per-center-title">项目经验</div>
+      <div class="check-page person-center center-pj" >
+        <table class="table table-bordered top-distance30 text-center money-table">
+          <thead class="project-table-title">
+            <tr>
+              <td>项目名称</td>
+              <td>职位</td>
+              <td>项目简介</td>
+              <td>起止时间</td>
+            </tr>
+          </thead>
+          <tbody>
+           <?php foreach($experience as $item): ?>
+            <tr>
+              <td class="text-gray size-14">
+                <?php echo $item['name']; ?>
+
+              </td>
+              <td class="text-gray size-14">
+                <?php echo $item['position']; ?>
+
+              </td>
+              <td class="text-gray size-14">
+             	<?php echo $item['jobcontent']; ?>
+
+              </td>
+              <td class="text-gray size-14">
+              <?php echo $item['start_time']; ?><br>-<br><?php echo $item['end_time']; ?>
+
+              </td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+      </table>
+      </div>
+        <!--教育经历-->
+      <div class="right-title per-center-title">教育经历</div>
+      <div class="check-page person-center center-pj" >
+        <table class="table table-bordered top-distance30 text-center money-table">
+          <thead class="project-table-title">
+            <tr>
+              <td>毕业学校</td>
+              <td>学历</td>
+              <td>专业</td>
+              <td>起止时间</td>
+            </tr>
+          </thead>
+          <tbody>
+              <?php foreach($education as $item): ?>
+            <tr>
+              <td class="text-gray size-14">
+                <?php echo $item['school']; ?>
+
+              </td>
+              <td class="text-gray size-14">
+                <?php echo $item['major']; ?>
+
+              </td>
+              <td class="text-gray size-14">
+              	<?php if($item['record'] == 0): ?> 高中以下 <?php endif; ?>
+              	<?php if($item['record'] == 1): ?> 高中 <?php endif; ?>
+              	<?php if($item['record'] == 2): ?> 专科 <?php endif; ?>
+              	<?php if($item['record'] == 3): ?> 本科 <?php endif; ?>
+              	<?php if($item['record'] == 4): ?> 硕士 <?php endif; ?>
+              	<?php if($item['record'] == 5): ?> 博士 <?php endif; ?>
+              </td>
+              <td class="text-gray size-14">
+               <?php echo $item['start_time']; ?><br>-<br> <?php echo $item['end_time']; ?>
+
+              </td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+      </table>
+      </div>
+  <!--评价-->
+    <div class="right-title per-center-title">评价</div>
+  <div class="check-page center-pj">
+  <div class="text-info size-14 assess">综合评价：<br/><br/>
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+  </div>
+
+  <div class="text-info size-14 assess">
+    <div class="col-md-6 clear-left pull-left">
+       综合评价：<br/><br/>
+    <span class="icon-distance"><img src="/images/need/pj-icon-02.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-02.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-02.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    </div>
+    <div class="col-md-6 clear-left pull-right">
+        综合评价：<br/><br/>
+    <span class="icon-distance"><img src="/images/need/pj-icon-03.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-03.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-03.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="text-info size-14 assess">
+    <div class="col-md-6 clear-left pull-left">
+       综合评价：<br/><br/>
+    <span class="icon-distance"><img src="/images/need/pj-icon-04.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-04.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-04.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    </div>
+    <div class="col-md-6 clear-left pull-right">
+        综合评价：<br/><br/>
+    <span class="icon-distance"><img src="/images/need/pj-icon-05.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-05.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-05.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    </div>
+  </div>
+  <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+    <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+
+    <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+  <p class="text-center need-main"><img src="/images/need/pj-more.png"></p>
+  </div>
+ </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

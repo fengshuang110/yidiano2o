@@ -1,0 +1,383 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('angular'); ?>
+ ng-controller="workController"
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是开发者>WOKE平台><a href="#"><span class="text-warning">我的订单</span></a></div>
+</div>
+</div>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+  <div class="col-md-2">
+	<table class="table table-hover need-left yzj-work">
+		<tbody>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/developer/applies">我的报名<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/developer/works">接包项目<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/developer/orders">接包订单<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/developer/collect">我的收藏<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-comment pull-left icon-distance"></span><a href="/developer/recommend">我的推荐<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="#">众包任务管理<span class="pull-right"></span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span><a href="#"></a>GIT平台<span class="pull-right"></span></a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!--右侧-->
+  <div class="col-md-10 clear-both">
+    <!--标题-->
+    <ul class="nav nav-tabs yzj-work-title" role="tablist">
+      <li ng-click="getWorks('wait_paybalance');" role="presentation" class="active"><a href="#wait_paybalance" aria-controls="wait_paybalance" role="tab" data-toggle="tab">等待付尾款</a></li>
+      <li ng-click="getWorks('developing');" role="presentation"><a href="#developing" aria-controls="developing" role="tab" data-toggle="tab">开发中</a></li>
+      <li ng-click="getWorks('acceptance');" role="presentation"><a href="#acceptance" aria-controls="acceptance" role="tab" data-toggle="tab">提交验收中</a></li>
+      <li ng-click="getWorks('finished');" role="presentation"><a href="#finished" aria-controls="finished" role="tab" data-toggle="tab">已完成</a></li>
+    </ul>
+    <!--内容-->
+    <div class="tab-content yzj-work-content">
+      <div role="tabpanel" class="tab-pane active" id="wait_paybalance">
+        <table class="table project-table project-need work-table">
+          <tbody>
+   			 <tr ng-repeat="item in wait_paybalance_works">
+              <td> 
+	               <p class="release-title">
+	                <span class="release-title-text size-14">
+	                  <a href="/work/detail/{{item.id}}">{{item.title}}</a>
+	                </span>
+	                <span class="title-type-quicy">急</span>
+	                <span class="title-type-replace">押</span>
+	                <span><img src="/images/index/index-title-icon.png"></span>
+	              </p>
+	              <p class="release-title text-info">
+	                <span class="icon-distance">发布者：{{item.username}} </span>
+	                	预计开发完成时间：{{item.deadline * 1000 | date:'yyyy-mm-dd'}}
+	              </p>
+	              <p class="release-title text-info">
+	                <span class="icon-distance">状态：开发中 </span>
+	              </span>
+	              开发周期：{{item.cycle}}天
+	            </p>
+	
+	            <p class="release-title">
+	            <span class="text-info">技能要求:</span>
+	            
+	              <span ng-repeat="tag in item.tags" class="label label-default blacktext">{{tag}}</span>
+	            </p>
+	          </td>
+	          <td>
+	           <p class="release-title text-warning project-price">￥{{item.amount}}</p>
+	            <p class="release-title text-info">已托管费用：￥{{item.advance}}</p>
+	            <p>
+	            <button class="btn btn-success">联系需求者</button> 
+	            </p>
+	          </td>
+        </tr>
+  </tbody>
+</table>
+	</div>
+
+
+	<div role="tabpanel" class="tab-pane" id="developing">
+	 <table class="table project-table project-need work-table">
+	          <tbody>
+	   			 <tr ng-repeat="item in developing_works">
+	              <td> 
+	               <p class="release-title">
+	                <span class="release-title-text size-14">
+	                  <a href="/work/detail/{{item.id}}">{{item.title}}</a>
+	                </span>
+	                <span class="title-type-quicy">急</span>
+	                <span class="title-type-replace">押</span>
+	                <span><img src="/images/index/index-title-icon.png"></span>
+	              </p>
+	              <p class="release-title text-info">
+	                <span class="icon-distance">发布者：{{item.username}} </span>
+	                	预计开发完成时间：{{item.deadline * 1000 | date:'yyyy-mm-dd'}}
+	              </p>
+	              <p class="release-title text-info">
+	                <span class="icon-distance">状态：开发中 </span>
+	              </span>
+	              开发周期：{{item.cycle}}天
+	            </p>
+	
+	            <p class="release-title">
+	            <span class="text-info">技能要求:</span>
+	            
+	              <span ng-repeat="tag in item.tags" class="label label-default blacktext">{{tag}}</span>
+	            </p>
+	          </td>
+	          <td>
+	           <p class="release-title text-warning project-price">￥{{item.amount}}</p>
+	            <p class="release-title text-info">已托管费用：￥{{item.advance}}</p>
+	            <p>
+	            <button class="btn btn-success">联系需求者</button> 
+	            <button class="btn btn-primary" ng-click="acceptance(item)">提交</button>
+	            </p>
+	          </td>
+	        </tr>
+	  </tbody>
+	</table>
+	</div>
+
+
+	<div role="tabpanel" class="tab-pane" id="acceptance">
+	 <table class="table project-table project-need work-table">
+	          <tbody>
+	   			 <tr ng-repeat="item in acceptance_works">
+	              <td> 
+	               <p class="release-title">
+	                <span class="release-title-text size-14">
+	                  <a href="/work/detail/{{item.id}}">{{item.title}}</a>
+	                </span>
+	                <span class="title-type-quicy">急</span>
+	                <span class="title-type-replace">押</span>
+	                <span><img src="/images/index/index-title-icon.png"></span>
+	              </p>
+	              <p class="release-title text-info">
+	                <span class="icon-distance">发布者：{{item.username}} </span>
+	                	预计开发完成时间：{{item.deadline * 1000 | date:'yyyy-mm-dd'}}
+	              </p>
+	              <p class="release-title text-info">
+	                <span class="icon-distance">状态：开发中 </span>
+	              </span>
+	              开发周期：{{item.cycle}}天
+	            </p>
+	
+	            <p class="release-title">
+	            <span class="text-info">技能要求:</span>
+	            
+	              <span ng-repeat="tag in item.tags" class="label label-default blacktext">{{tag}}</span>
+	            </p>
+	          </td>
+	          <td>
+	           <p class="release-title text-warning project-price">￥{{item.amount}}</p>
+	            <p class="release-title text-info">已托管费用：￥{{item.advance}}</p>
+	            <p>
+	            <button class="btn btn-success">联系需求者</button> 
+	            </p>
+	          </td>
+	        </tr>
+	  </tbody>
+	</table>
+	</div>
+
+	<div role="tabpanel" class="tab-pane" id="finished">
+	 <table class="table project-table project-need work-table">
+	          <tbody>
+	   			 <tr ng-repeat="item in finished_works">
+	               <td> 
+	               <p class="release-title">
+	                <span class="release-title-text size-14">
+	                  <a href="/work/detail/{{item.id}}">{{item.title}}</a>
+	                </span>
+	                <span class="title-type-quicy">急</span>
+	                <span class="title-type-replace">押</span>
+	                <span><img src="/images/index/index-title-icon.png"></span>
+	              </p>
+	              <p class="release-title text-info">
+	                <span class="icon-distance">发布者：{{item.username}} </span>
+	                	预计开发完成时间：{{item.deadline * 1000 | date:'yyyy-mm-dd'}}
+	              </p>
+	              <p class="release-title text-info">
+	                <span class="icon-distance">状态：开发中 </span>
+	              </span>
+	              开发周期：{{item.cycle}}天
+	            </p>
+	
+	            <p class="release-title">
+	            <span class="text-info">技能要求:</span>
+	            
+	              <span ng-repeat="tag in item.tags" class="label label-default blacktext">{{tag}}</span>
+	            </p>
+	          </td>
+	          <td>
+	           <p class="release-title text-warning project-price">￥{{item.amount}}</p>
+	            <p class="release-title text-info">已托管费用：￥{{item.advance}}</p>
+	            <p>
+	            <button class="btn btn-success">联系需求者</button> 
+	            </p>
+	          </td>
+	        </tr>
+	  </tbody>
+	</table>
+	</div>
+</div>
+<!--分页-->
+<div class="page">
+  <nav>
+    <ul class="pagination pull-right">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">上一页</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">下一页</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+<!-- Modal 1 默认尺寸-->
+<div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-warning" id="myModalLabel">提交工作成果</h4>
+      </div>
+      
+      <!-- 主体-->
+      <div class="modal-body">
+         <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-3 control-label clear-right">提交附件：</label>
+              <div class="col-sm-6 clear-left">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="1">
+              </div>
+              <div class="col-sm-3 clear-left">
+                <button class="btn btn-info btn-block"><img class="icon-distance" src="images/need/need-btn-icon01.png">上传附件</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label clear-right">沃客Git平台：</label>
+              <div class="col-sm-9 clear-left">
+                <select class="form-control"><option>2</option></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label clear-right">其他：</label>
+              <div class="col-sm-9 clear-left">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="3">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label clear-right">备注：</label>
+              <div class="col-sm-9 clear-left">
+                <textarea class="form-control" rows="5" placeholder="4"></textarea>
+              </div>
+            </div>
+          </form>
+   </div> 
+     <!-- 主体结束-->
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-lg btn-width140">提交</button>
+       </div>
+        
+    </div>
+  </div>
+</div><!-- Modal 1 默认尺寸-->
+<div class="modal fade" id="acceptance-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-warning" id="myModalLabel">提交工作成果</h4>
+      </div>
+      
+      <!-- 主体-->
+      <div class="modal-body">
+         <form class="form-horizontal">
+         	<input type="hidden" name="work_id" value="{{acceptance.work_id}}">
+         	<input type="hidden" name="order_id" value="{{acceptance.id}}">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-3 control-label clear-right">提交附件：</label>
+              <div class="col-sm-6 clear-left">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="1">
+              </div>
+              <div class="col-sm-3 clear-left">
+                <button class="btn btn-info btn-block"><img class="icon-distance" src="images/need/need-btn-icon01.png">上传附件</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label clear-right">沃客Git平台：</label>
+              <div class="col-sm-9 clear-left">
+                <select class="form-control">
+                <option>github</option>
+                <option>gitlab</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label clear-right">其他：</label>
+              <div class="col-sm-9 clear-left">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="3">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label clear-right">备注：</label>
+              <div class="col-sm-9 clear-left">
+                <textarea class="form-control" rows="5" placeholder="4"></textarea>
+              </div>
+            </div>
+          </form>
+   </div> 
+     <!-- 主体结束-->
+     
+      <div class="modal-footer">
+        <button type="button" ng-click="complete(acceptance);" class="btn btn-primary btn-lg btn-width140">提交</button>
+       </div>
+        
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 3 默认尺寸-->
+<div class="modal fade" id="acceptance-success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-2-header">
+        <button onclick="location.href=location.href;" class="btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-2-title text-success" id="myModalLabel">提交验收操作成功</h4>
+      </div>
+        <div class="modal-2-body text-center">
+          <span class="size-16 text-muted">项目提交成功，等待耐心需求者审核！联系需求者</span>
+        </div>	
+      <div class="modal-2-footer">
+       <a href="/developer/works" class="btn btn-success btn-lg btn-width140">返回接包项目</a>
+      </div>
+        
+    </div>
+  </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/frontend/developer.js"></script>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.developer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

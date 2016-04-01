@@ -1,0 +1,369 @@
+<?php use \Common\Tools\Parsedown;?>
+<?php $__env->startSection('style'); ?>
+<link href="/css/work.css" rel="stylesheet" type="text/css" />
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+<!--需求者一级导航-->
+  <div class="dinner need-nav">
+  <div class="container">
+  	 <ul class="nav needer pull-left">
+  	 	<li><a href="#">首页</a></li>
+  	 	<li><a href="#">任务管理</a></li>
+  	 	<li><a href="#">沃客钱包</a></li>
+  	</ul>
+  	<ul class="nav needer pull-right">
+  		<li><a href="#">社区</a></li>
+  		<li class="resume-line">|</li>
+  		<li><a href="#">新手入门</a></li>
+  	</ul>
+  </div>
+  </div>
+  <!--需求者二级导航-->
+  <div class="dinner need-nav-second">
+  	<div class="container">
+  		<div class="pull-right">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+  	</div>
+  </div>
+</nav>
+
+<div class="container need-main">
+	<div class="col-md-9 clear-both">
+		<div class="panel panel-default">
+			<ol class="breadcrumb">
+				  <li>标题</li>
+				  <li>技能</li>
+				  <li>发布者</li>
+				  <li>时间</li>
+			</ol>
+			<div class="panel-body">
+				<div class="row ">
+					<div class="col-sm-9">
+					<p class="release-title">
+						<span class="size-18"><?php echo $work['title']; ?> </span>
+						<span class="title-type-quicy">急</span>
+						<span class="title-type-replace">押</span>
+				    </p>
+					<p class="release-title text-info">
+          <span class="icon-distance">发布者:<?php echo $work['username']; ?></span> 
+          <button class="btn btn-xs btn-default icon-distance">
+            <img src="/images/need/zixun-icon.png">
+          咨询</button>
+          <span>工作年限:<?php echo $work['work_year']; ?></span>
+          </p>
+					<p class="release-title text-info"><span class="icon-distance">截止日期:<?php echo date('Y-d-m',$work['deadline']); ?></span> <span>已有<span class="text-warning"><?php echo $work['apply_count']; ?></span>人报名</span></p>
+				   </div>
+          <div class="col-md-1"></div>
+				   <div class="col-sm-2">
+						<p class="release-title text-warning project-price">￥<?php echo $work['budget']; ?></p>
+						<p class="release-title text-info">已付押金<?php echo $work['advance']; ?></p>
+						<p class="release-title need-qd"><span class="label">
+						<?php if($work['status'] == 1): ?>
+							报名中
+						<?php endif; ?>
+						<?php if($work['status'] == 2): ?>
+							等待托管尾款
+						<?php endif; ?>
+						<?php if($work['status'] == 3): ?>
+							开发中
+						<?php endif; ?>
+						<?php if($work['status'] == 4): ?>
+							等待验收
+						<?php endif; ?>
+						<?php if($work['status'] == 5): ?>
+							与完成
+						<?php endif; ?>
+						</span></p>
+				   </div>
+				
+				</div>
+				<hr>
+		<div class="">
+		 <p class="size-18">需求详情</p>
+		  <p class="release-title" >项目类型：<?php echo $work['category_name']; ?></p>
+		  <p class="release-title">
+			技能要求:
+			<?php foreach($work['tags'] as $tag): ?>
+			<span class="label label-default primary"><?php echo $tag; ?></span>
+			<?php endforeach; ?>
+		</p>
+		<p class="release-title size-15">需求描述:</p>
+		<p class="release-title text-info">
+		   <?php echo Parsedown::instance()->text($work['description']); ?>
+
+		</p>
+    <p class="size-14" style="margin-top:15px;">
+    <button class="btn btn-width140 btn-info">
+    <img src="/images/need/xiazai.png" class="icon-distance">下载附件
+    </button>
+    </p>
+    <br/>
+		</div>
+    <hr>
+    <?php if(!empty($apply)): ?>
+    <div class="">
+       <p class="size-18 release-title">报名详情</p>
+       <p>
+         <p class="size-15 release-title">我的报价:<?php echo $apply['price']; ?>元</p>
+         <p class="size-15 release-title"><?php echo $apply['cycle']; ?>天</p>
+         <p class="size-15 release-title"><?php echo $apply['intro']; ?></p>
+       </p>
+    </div>
+	<hr>
+	<div class="pull-right">
+      <button class="btn btn-disabled" disabled="disabled">
+      <img class="icon-distance" src="images/need/baoming-icon02.png">已报名
+      </button>
+    </div>
+    <?php elseif($work['status'] == 1 && $session_user['userid']!=$work['user_id']): ?>
+   		<hr>
+		<div class="">
+			<div class="pull-left">
+        <span class="icon-distance size-16">
+          <img src="/images/need/shoucang.png" class="icon-distance"/>
+         	 收藏
+        </span>  
+        <span class="icon-distance size-16">
+          <img src="/images/need/dianzan.png" class="icon-distance"/>推荐人选
+        </span>  
+      </div>
+      <div class="pull-right">
+      <button class="btn btn-primary"  id="just_apply">
+      <img class="icon-distance" src="/images/need/baoming-icon.png">我要报名
+      </button>
+      </div>
+		</div>
+	 <?php endif; ?>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="right-main-content" style="margin-top:0px;">
+    <!--企业信息-->
+    <div class="publish-main">
+      <p class="right-title bm-title">企业信息</p>
+
+
+      <div class="media">
+  <a class="pull-left" href="#">
+    <img class="media-object img-thumbnail" src="/images/need/qiye-tx.png">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">北京酷虫科技...<img src="/images/need/company-rz.png" title="企业已认证"></h4>
+    <!-- Nested media object -->
+    <div class="media">
+    <p class="text-info">企业类型:互联网金融</p>
+    <p class="text-info release-title">规模：50-100人</p>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+ 
+    <!--评价-->
+	<div class="right-xueyuan">
+		 <p class="right-title">评价</p>
+		 <div class="evaluate">
+       <p class="size-14">沟通很好，不错的公司。</p>
+       <p class="release-title text-info">
+       <span class="pull-left">2015-11-10</span>
+       <span class="pull-right size-14">张青天</span>
+       </p>
+     </div>
+
+     <div class="evaluate">
+       <p class="size-14">沟通很好，不错的公司。</p>
+       <p class="release-title text-info">
+       <span class="pull-left">2015-11-10</span>
+       <span class="pull-right size-14">张青天</span>
+       </p>
+     </div>
+
+     <div class="evaluate">
+       <p class="size-14">沟通很好，不错的公司。</p>
+       <p class="release-title text-info">
+       <span class="pull-left">2015-11-10</span>
+       <span class="pull-right size-14">张青天</span>
+       </p>
+     </div>
+	</div>
+         <!--发布者需求记录-->
+    <div class="right-xueyuan">
+     <p class="right-title">发布者需求记录</p>
+        <ul>
+          <li>
+            <p class="release-title size-14">
+              <span class="pull-left">移动医疗App设计</span>
+              <span class="pull-right text-warning">报名中</span>
+            </p>
+            <div class="clearfix"></div>
+            <p class="release-title text-info size-14">￥8000</p>
+          </li>
+          <li>
+            <p class="release-title size-14">
+              <span class="pull-left">移动医疗App设计</span>
+              <span class="pull-right text-success">已选标</span>
+            </p>
+            <div class="clearfix"></div>
+            <p class="release-title text-info size-14">￥8000</p>
+          </li>
+          <li>
+            <p class="release-title size-14">
+              <span class="pull-left">移动医疗App设计</span>
+              <span class="pull-right">已结束</span>
+            </p>
+            <div class="clearfix"></div>
+            <p class="release-title text-info size-14">￥8000</p>
+          </li>
+          <li>
+            <p class="release-title size-14">
+              <span class="pull-left">移动医疗App设计</span>
+              <span class="pull-right">已结束</span>
+            </p>
+            <div class="clearfix"></div>
+            <p class="release-title text-info size-14">￥8000</p>
+          </li>
+          <li>
+            <p class="release-title size-14">
+              <span class="pull-left">移动医疗App设计</span>
+              <span class="pull-right">已结束</span>
+            </p>
+            <div class="clearfix"></div>
+            <p class="release-title text-info size-14">￥8000</p>
+          </li>
+        </ul> 
+    </div>
+	 </div>
+ </div>
+</div>
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+ <!-- Modal 1 默认尺寸弹出框-->
+<div class="modal fade" id="apply-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-warning" id="myModalLabel">报 名</h4>
+      </div>
+      
+      <!-- 主体-->
+      <div class="modal-body">
+         <form class="form-horizontal" id="apply-form" type="post" action="/apply/create">
+            <input type="hidden" name="work_id" value="<?php echo $work['id']; ?>"/> 
+            <div class="form-group">
+              <label for="price" class="col-sm-3 control-label clear-right">我的报价：</label>
+              <div class="col-sm-9 clear-left">
+                <input type="text" class="form-control" name="price" id="price" placeholder="请输入数字">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cycle" class="col-sm-3 control-label clear-right">开发周期：</label>
+              <div class="col-sm-9 clear-left">
+                <input type="text" class="form-control" name="cycle" id="cycle" placeholder="请输入天数">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="intro" class="col-sm-3 control-label clear-right">我的优势：</label>
+              <div class="col-sm-9 clear-left">
+                <textarea name="intro" class="form-control" rows="3" placeholder="请输入"></textarea>
+              </div>
+            </div>
+           <div class="modal-footer">
+        		<button type="submit" class="btn btn-primary btn-lg btn-width140">提交报名</button>
+       	   </div>
+          </form>
+   </div> 
+     <!-- 主体结束-->
+     
+      
+        
+    </div>
+  </div>
+</div>
+<!-- Modal 1结束-->
+
+
+
+<!-- Modal 1-->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+   <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">用户登录</h4>
+      </div>
+      <!-- 主体-->
+      <div class="modal-body">
+         <form id="login-form" action="/home/login" method="post" role="form">
+		 <div class="form-group">
+				<input type="text" class="form-control" name="username" placeholder="请输入用户名/手机号/邮箱" />
+		</div>
+		<div class="form-group">
+				<input type="password" class="form-control" name="password" placeholder="请输入密码"/>
+		</div>
+		<div class="form-group field-loginform-rememberme">
+			<div class="checkbox">
+			<label for="loginform-rememberme">
+			<input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked="">
+			30天内免登录 </label><p class="pull-right"><a href="#">忘记密码？</a></p>  
+            </div>	
+        </div>	
+       <div class="form-group">
+       	 <button type="submit" class="btn btn-primary btn-lg btn-block">保 存</button><br>
+       </div>
+        <div style="text-align: center;margin-bottom:30px;">没有云族佳账号？<a href="/home/register" class="text-warning">点此注册</a>
+        </div>
+    </div>		
+	   </form>
+	 </div>	
+     <!-- 主体结束-->
+      
+   </div>
+  </div>
+</div>
+<!-- Modal 1结束-->
+
+
+<!-- Modal 2 默认尺寸-->
+<div class="modal fade" id="resume-lack-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-2-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-2-title text-danger" id="myModalLabel">提 示</h4>
+      </div>
+        <div class="modal-2-body text-center">
+          <span class="size-16 text-muted">亲爱的用户,你的简历还不完善，不能报名！</span>
+        </div>	
+      <div class="modal-2-footer">
+       <a href="/user/resume" class="btn btn-danger btn-lg btn-width140">完善资料</a>
+      </div>
+        
+    </div>
+  </div>
+</div>
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/bootstrapValidator.js"></script>
+<script src="/js/frontend/user.js"></script>
+<script src="/js/frontend/home.js"></script>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

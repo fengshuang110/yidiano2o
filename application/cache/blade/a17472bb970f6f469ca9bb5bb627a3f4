@@ -1,0 +1,153 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是开发者>WOKE平台><a href="#"><span class="text-warning">我的订单</span></a></div>
+</div>
+</div>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main" ng-controller="orderController" >
+  <div class="col-md-2">
+	<table class="table table-hover need-left yzj-work">
+		<tbody>
+		<tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/demand/index">需求者首页</a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/demand/work">我的项目<span class="pull-right">(10)</span></a></td></tr>
+        <tr class="demand-menu-active"><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/demand/order">我发包订单<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="#">众包任务管理<span class="pull-right"></span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span><a href="#"></a>GIT平台<span class="pull-right"></span></a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!--右侧-->
+  <div class="col-md-10 clear-both check-page">
+      <h4 class="check-title">订单详情</h4>
+      <div class="order-detail">
+        <p class="size-18">订单号：12543445346</p>
+        <p class="size-18 top-distance30">
+          <span class="text-distance">项目名称：PHP平台二次开发项目找伙伴PHP平台二次开发的项目
+          </span>
+          <span class="title-type-quicy size-14">急</span>
+          <p class="text-info index-main">
+            <span class="icon-distance">生成订单时间：2015-11-10 13：23</span>
+            <span class="">发包方: 北京酷虫科技股份有限公司</span>
+            <span class="">项目验收时间：2015-11-10 13：23</span>
+          </p>
+        <p class="size-18 top-distance30">
+          <span class="icon-distance">接包方:  莫小奇</span>
+        </p>
+        <p class="size-18 top-distance30">
+          <span class="icon-distance">开发周期：20天</span>
+        </p>
+      </div>
+      
+       <!--项目金额展示-->
+      <div class="col-md-12 clear-both" role="tablist">
+      <div class="col-md-4 active clear-both">
+        <div class="person-number">
+          <div class="person-number-insert">
+            <div class="media">
+              <div class="media-body person-title-list text-center">
+                <h4 class="size-18">项目成交金额</h4>
+                <p class="text-warning size-24">￥ 80,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="person-number">
+          <div class="person-number-insert">
+            <div class="media">
+              <div class="media-body person-title-list text-center">
+                <h4 class="size-18">项目成交金额</h4>
+                <p class="text-warning size-24">￥ 1,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 clear-both">
+        <div class="person-number">
+          <div class="person-number-insert">
+            <div class="media person-source">
+              <div class="media">
+              <div class="media-body person-title-list text-center">
+                <h4 class="size-18">项目成交金额</h4>
+                <p class="text-warning size-24">￥ 20,000</p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+       <!--项目金额展示结束-->
+      <p>&nbsp;</p>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default xmxq">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title text-center">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <span class="btn btn-default btn-radius100">
+                  展开项目详情&nbsp;&nbsp;<span class="caret"></span>
+              </span>
+              </a>
+            </h4>
+          </div>
+          <hr class="order-line" />
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                <p class="size-18">项目需求</p>
+                <p class="text-info help-content">
+      1.功能需求<br/>
+        Web端与APP将通过JSON接口进行对接。<br/>
+        基本功能包括但不限于以下功能<br/>
+      2.开发者工作职责<br/>
+        Web端与APP将通过JSON接口进行对接。<br/>
+        基本功能包括但不限于以下功能<br/>
+      3.工作成果交付需求<br/>
+        一附件形式交付<br/>
+      4.知识产权声明<br/>
+        未侵犯他人的著作权。如有侵犯他人著作权，<br/>
+        由设计者承担所有法律责任。<br/>
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <p class="top-distance30">
+      <button class="btn btn-primary btn-lg btn-width140 size-16">去托管预付款</button>
+      <button class="btn btn-disabled btn-lg btn-width140 size-16">取消</button>
+      </p>
+  </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.demand', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

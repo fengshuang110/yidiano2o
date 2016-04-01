@@ -1,0 +1,196 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+
+ <!--需求者一级导航-->
+  <div class="dinner need-nav">
+  <div class="container">
+  	 <ul class="nav needer pull-left">
+  	 	<li><a href="#">首页</a></li>
+  	 	<li><a href="#">任务管理</a></li>
+  	 	<li><a href="#">沃客钱包</a></li>
+  	</ul>
+  	<ul class="nav needer pull-right">
+  		<li><a href="#">社区</a></li>
+  		<span class="resume-line">|</span>
+  		<li><a href="#">新手入门</a></li>
+  	</ul>
+  </div>
+  </div>
+  <!--需求者二级导航-->
+  <div class="dinner need-nav-second">
+  	<div class="container">
+  		<div class="pull-right">当前位置：我是需求者>任务管理><a href="#"><span class="text-warning">查看报名者</span></a></div>
+  	</div>
+  </div>
+</nav>
+<!--主体开始-->
+<div class="container clear-both need-main">
+  <div class="col-md-12 clear-left">
+
+  <!--任务表格-->
+       <table class="table project-table">
+        <thead class="project-table-title">
+          <tr>
+            <td width="5%">报名者</td>
+            <td>&nbsp;</td>
+            <td width="25%">报名信息</td>
+            <td width="15%">报名时间</td>
+            <td width="20%">操作</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></td>
+          <p class="project-table-deta">
+            <td>
+              <p class="release-title">
+                <span class="release-title-text">
+                <a href="#" class="h5">张小凡</a> <img src="/images/need/need-V.png" width="17" height="14"> <span class="muted"> 学历：本科</span>
+                </span>
+              </p>
+              <p class="release-title">
+              <span class="muted">擅长技能:</span>
+              <span class="label label-default blacktext">PHP</span>
+              <span class="label label-default primary">JSP</span>
+              </p>
+            </td>
+            <td>
+              <p class="release-title muted release-title-time">              
+              报价：<span class="text-warning">￥880,000</span><br/>
+              开发周期：<span class="text-warning">14天</span>
+              </p>
+            </td>
+            <td><p class="release-title muted release-title-time">2015-6-18</p>
+            </td>
+            <td><button type="button" class="btn btn-success btn-width70">联系</button> 
+            <button type="button" class="btn btn-primary btn-width70">联系</button></td>
+          </tr>
+          <tr>
+          <td colspan="5">
+            <div class="table-line"></div>
+          </td>
+          </tr>
+           <tr>
+             <td><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></td>
+             <td><p class="release-title"> <span class="release-title-text"> <a href="#" class="h5">张小凡</a> <img src="/images/need/need-V.png" width="17" height="14"> <span class="muted"> 学历：本科</span> </span> </p>
+               <p class="release-title"> <span class="muted">擅长技能:</span> <span class="label label-default blacktext">PHP</span> <span class="label label-default primary">JSP</span> </p></td>
+            <td>
+              <p class="release-title muted release-title-time">
+              <span class="text-warning">5</span>天<span class="text-warning">20</span>小时后截止<br/>
+              云沃客有限公司
+              </p>
+            </td>
+            <td>
+            <p class="release-title muted release-title-time">2015-6-18</p>
+            </td>
+            <td><button type="button" class="btn btn-success btn-width70">联系</button> 
+            <button type="button" class="btn btn-primary btn-width70">联系</button></td>
+          </tr>
+          <tr>
+          <td colspan="5">
+            <div class="table-line"></div>
+          </td>
+          </tr>
+           <tr>
+             <td><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></td>
+             <td><p class="release-title"> <span class="release-title-text"> <a href="#" class="h5">张小凡</a> <img src="/images/need/need-V.png" width="17" height="14"> <span class="muted"> 学历：本科</span> </span> </p>
+               <p class="release-title"> <span class="muted">擅长技能:</span> <span class="label label-default blacktext">PHP</span> <span class="label label-default primary">JSP</span> </p></td>
+            <td>
+              <p class="release-title muted release-title-time">
+              <span class="text-warning">5</span>天<span class="text-warning">20</span>小时后截止<br/>
+              云沃客有限公司
+              </p>
+            </td>
+            <td>
+            <p class="release-title muted release-title-time">2015-6-18</p>
+            </td>
+            <td><button type="button" class="btn btn-success btn-width70">联系</button> 
+            <button type="button" class="btn btn-primary btn-width70">联系</button></td>
+          </tr>
+          <tr>
+          <td colspan="5">
+            <div class="table-line"></div>
+          </td>
+          </tr>
+          <tr>
+            <td><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></td>
+            <td><p class="release-title"> <span class="release-title-text"> <a href="#" class="h5">张小凡</a> <img src="/images/need/need-V.png" width="17" height="14"> <span class="muted"> 学历：本科</span> </span> </p>
+              <p class="release-title"> <span class="muted">擅长技能:</span> <span class="label label-default blacktext">PHP</span> <span class="label label-default primary">JSP</span> </p></td>
+            <td>
+              <p class="release-title muted release-title-time">
+              <span class="text-warning">5</span>天<span class="text-warning">20</span>小时后截止<br/>
+              云沃客有限公司
+              </p>
+            </td>
+            <td>
+            <p class="release-title muted release-title-time">2015-6-18</p>
+            </td>
+            <td><button type="button" class="btn btn-success btn-width70">联系</button> 
+            <button type="button" class="btn btn-primary btn-width70">联系</button></td>
+          </tr>
+          <tr>
+          <td colspan="5">
+            <div class="table-line"></div>
+          </td>
+          </tr>
+          <tr>
+            <td><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></td>
+            <td><p class="release-title"> <span class="release-title-text"> <a href="#" class="h5">张小凡</a> <img src="/images/need/need-V.png" width="17" height="14"> <span class="muted"> 学历：本科</span> </span> </p>
+              <p class="release-title"> <span class="muted">擅长技能:</span> <span class="label label-default blacktext">PHP</span> <span class="label label-default primary">JSP</span> </p></td>
+            <td>
+              <p class="release-title muted release-title-time">
+              <span class="text-warning">5</span>天<span class="text-warning">20</span>小时后截止<br/>
+              云沃客有限公司
+              </p>
+            </td>
+            <td>
+            <p class="release-title muted release-title-time">2015-6-18</p>
+            </td>
+            <td><button type="button" class="btn btn-success btn-width70">联系</button> 
+            <button type="button" class="btn btn-primary btn-width70">联系</button></td>
+          </tr>
+          
+        </tbody>
+    </table>
+      <!--分页-->
+      <div class="page">
+        <nav>
+          <ul class="pagination pull-right">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">上一页</span>
+              </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">下一页</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+	</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

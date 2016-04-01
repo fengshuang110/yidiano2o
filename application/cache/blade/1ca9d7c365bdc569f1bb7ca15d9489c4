@@ -1,0 +1,156 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('angular'); ?>
+ ng-controller="ResumeController"
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+ <!--需求者二级导航-->
+  <div class="dinner need-nav-second">
+  	<div class="container">
+  		<div class="pull-right text-info text-distance">当前位置：我是开发者>个人中心><a href="#"><span class="text-warning">个人资料展示</span></a></div>
+  	</div>
+  </div>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+		<span class="text-warning">50</span>元红包&nbsp;&nbsp;
+		<a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	</p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+	<div class="col-md-2">
+		<table class="table table-hover need-left size-14">
+			<thead><tr><td> 开发者中心</td></tr></thead>
+			<tbody>
+			<tr><td>
+         <a href="/user/profile"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>个人中心
+      	 </a></td></tr>
+				<tr><td>
+         <a href="/user/settings"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>账号安全
+      	 </a></td></tr>
+        	<tr><td>
+          <a href="/user/resume"><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span>
+        	个人简历
+         </a></td></tr>
+         
+		<tr><td>
+           <a href="/user/contacts"><span class="glyphicon glyphicon-user pull-left icon-distance"></span>
+        人脉</a></td></tr>
+				<tr><td>
+           <a href="/user/evaluation"><span class="glyphicon glyphicon-comment pull-left icon-distance"></span>
+        评价</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+	
+	 <!--右侧-->
+    <!--基本资料 开始-->
+    <div class="col-md-10 right-title-left15">基本资料</div>
+    <div class="col-md-10 check-page">
+         <form class="form-horizontal margin15-top" id="profile-form">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">姓名 :</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" name="name" value="<?php echo $profile['name']; ?>" placeholder="1">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">性别 :</label>
+              <div class="col-sm-6">
+                <label class="radio-inline">
+                  <input type="radio" name="sex"  value="1"> 男</label>
+                <label class="radio-inline">
+                  <input type="radio" name="sex" value="2"> 女</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">学历 : </label>
+              <div class="col-sm-6">
+                <select class="form-control" name="education">
+                <option <?php if($profile['education'] == 0): ?> selected <?php endif; ?> value="0">高中以下</option>
+                <option <?php if($profile['education'] == 1): ?> selected <?php endif; ?> value="1">高中</option>
+                <option <?php if($profile['education'] == 2): ?> selected <?php endif; ?> value="2">专科</option>
+                <option <?php if($profile['education'] == 3): ?> selected <?php endif; ?> value="3">本科</option>
+                <option <?php if($profile['education'] == 4): ?> selected <?php endif; ?> value="4">硕士</option>
+                <option <?php if($profile['education'] == 5): ?> selected <?php endif; ?> value="5">博士</option>
+                
+                </select>
+              </div>
+            </div>
+            
+           <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">出生日期 : </label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" name="birthday" value="<?php echo $profile['birthday']; ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">职位: </label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" name="position" value="<?php echo $profile['position']; ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">工作地点：</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" name="location" value="<?php echo $profile['location']; ?>">
+              </div>
+              <div class="col-sm-2 clear-left">
+                <button class="btn btn-default btn-block">从列表中选择 + </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">擅长技能 :</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" name="location" value="<?php echo implode(',',$profile['tags']); ?>">
+              </div>
+              <div class="col-sm-2 clear-left">
+                <button class="btn btn-default btn-block">从列表中选择 + </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">联系邮箱 :</label>
+              <div class="col-sm-6">
+                <input type="email" class="form-control" name="email"  value="<?php echo $profile['email']; ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">个人介绍 :</label>
+              <div class="col-sm-6">
+                <textarea class="form-control" name="intro" rows="3"><?php echo $profile['intro']; ?></textarea>
+              </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-2 text-center">
+                 <p>&nbsp;</p>
+                 <button type="submit" class="btn btn-lg btn-primary btn-width140 icon-distance">保存</button>
+                 <p>&nbsp;</p>
+               </div>
+            </div>
+          </form>
+    </div>
+    <!--基本资料 结束-->
+    
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script type="text/javascript" src="/js/bootstrap-datetimepicker.js"></script>
+<script src="/js/bootstrapValidator.js"></script>
+<script src="/js/angular.min.js"></script>
+<script type="text/javascript" src="/js/frontend/resume.js"></script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.developer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

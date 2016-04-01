@@ -1,0 +1,185 @@
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('angular'); ?>
+ ng-controller="orderController"
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是开发者>WOKE平台><a href="#"><span class="text-warning">我的订单</span></a></div>
+</div>
+</div>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+	<div class="col-md-2">
+		<table class="table table-hover need-left yzj-work">
+		<tbody>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/developer/applies">我的报名<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/developer/works">接包项目<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/developer/orders">接包订单<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/developer/collect">我的收藏<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-comment pull-left icon-distance"></span><a href="/developer/recommend">我的推荐<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="#">众包任务管理<span class="pull-right"></span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span><a href="#"></a>GIT平台<span class="pull-right"></span></a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!--右侧-->
+  <div class="col-md-10 clear-both">
+    <!--标题-->
+    <ul class="nav nav-tabs yzj-work-title" role="tablist">
+      <li ng-click="getOrders('wait_paybalance');" role="presentation" class="active"><a href="#wait-paybalance" aria-controls="wait-paybalance" role="tab" data-toggle="tab">等待付尾款</a></li>
+      <li ng-click="getOrders('under_way');" role="presentation"><a href="#underway" aria-controls="underway" role="tab" data-toggle="tab">进行中</a></li>
+      <li ng-click="getOrders('finished');" role="presentation"><a href="#finished" aria-controls="finished" role="tab" data-toggle="tab">已完成</a></li>
+    </ul>
+    <!--内容-->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active " id="wait-paybalance">
+      <div ng-repeat="item in wait_paybalance_orders"class="work-pt" >
+         <div class="col-md-9">
+          <p class="release-title">
+                <span class="release-title-text size-14">
+                  <a href="#">{{item.title}}</a>
+                </span>
+                <span ng-if="item.work_status == 2"class="label label-default success-fill">待托管尾款</span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">订单号：{{item.order_sn}}</span>
+                <span ng-if="item.status == 0">订单状态：未生效</span>
+            	<span ng-if="item.status == 1">订单状态：进行中</span>
+            	<span ng-if="item.status == 2">订单状态：已完成</span>
+                  开发周期：<span>{{item.cycle}}</span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">签单时间：{{item.created_at * 1000 | date:'yyyy-mm-dd'}}</span>
+                <span class="icon-distance">截止时间：{{item.deadline * 1000 | date:'yyyy-mm-dd'}}</span>
+            </p>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2 text-right">
+          <p class="release-title text-warning project-price">￥{{item.amount}}</p>
+            <p class="release-title text-info">已托管：￥{{item.advance}}</p>
+            <p>
+            <a href="/developer/order/{{item['id']}}" class="btn btn-primary">订单详情</a>
+            </p>
+        </div>
+      </div>
+</div>
+	
+	<div role="tabpanel" class="tab-pane  " id="underway">
+     <div ng-repeat="item in underway_orders"class="work-pt" >
+         <div class="col-md-9">
+          <p class="release-title">
+                <span class="release-title-text size-14">
+                  <a href="#">{{item.title}}</a>
+                </span>
+                <span ng-if="item.work_status == 3"class="label label-default success-fill">开发中</span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">订单号：{{item.order_sn}}</span>
+              <span ng-if="item.status == 0">订单状态：未生效</span>
+              <span ng-if="item.status == 1">订单状态：进行中</span>
+              <span ng-if="item.status == 2">订单状态：已完成</span>
+                  开发周期：<span>{{item.cycle}}</span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">签单时间：{{item.created_at * 1000 | date:'yyyy-mm-dd'}}</span>
+                <span class="icon-distance">截止时间：{{item.deadline * 1000 | date:'yyyy-mm-dd'}}</span>
+            </p>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2 text-right">
+          <p class="release-title text-warning project-price">￥{{item.amount}}</p>
+            <p class="release-title text-info">已托管：￥{{item.advance}}</p>
+            <p>
+            <a  href="/developer/order/{{item['id']}}" class="btn btn-primary">订单详情</a>
+            </p>
+        </div>
+      </div>
+	</div>
+	
+	
+	<div role="tabpanel" class="tab-pane  " id="finished">
+       <div ng-repeat="item in finished_orders"class="work-pt" >
+        <div class="col-md-9">
+          <p class="release-title">
+                <span class="release-title-text size-14">
+                  <a href="#">{{item.title}}</a>
+                </span>
+               <span ng-if="item.work_status == 5"class="label label-default success-fill">已完成</span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">订单号：{{item.order_sn}}</span>
+                <span ng-if="item.status == 0">订单状态：未生效</span>
+                <span ng-if="item.status == 1">订单状态：进行中</span>
+                <span ng-if="item.status == 2"> 订单状态：已完成</span>
+                  开发周期：<span>{{item.cycle}}</span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">签单时间：{{item.created_at * 1000 | date:'yyyy-mm-dd'}}</span>
+                <span class="icon-distance">截止时间：{{item.deadline * 1000 | date:'yyyy-mm-dd'}}</span>
+            </p>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2 text-right">
+          <p class="release-title text-warning project-price">￥{{item.amount}}</p>
+            <p class="release-title text-info">已托管：￥{{item.advance}}</p>
+            <p>
+            <a   href="/developer/order/{{item['id']}}" class="btn btn-primary">订单详情</a>
+            </p>
+        </div>
+      </div>
+	</div>
+</div>
+<!--分页-->
+<div class="page">
+  <nav>
+    <ul class="pagination pull-right">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">上一页</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">下一页</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/frontend/developer.js"></script>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.developer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

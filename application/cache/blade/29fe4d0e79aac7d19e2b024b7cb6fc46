@@ -1,0 +1,194 @@
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('angular'); ?>
+ ng-controller="applyController"
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是开发者>WOKE平台><a href="#"><span class="text-warning">我的订单</span></a></div>
+</div>
+</div>
+
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+	<div class="col-md-2">
+		<table class="table table-hover need-left yzj-work">
+		<tbody>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/developer/applies">我的报名<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/developer/orders">接包订单<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/developer/collect">我的收藏<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-comment pull-left icon-distance"></span><a href="/developer/recommend">我的推荐<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="#">众包任务管理<span class="pull-right"></span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span><a href="#"></a>GIT平台<span class="pull-right"></span></a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!--右侧-->
+ <div class="col-md-10 clear-both">
+    <!--标题-->
+    <ul class="nav nav-tabs yzj-work-title" role="tablist">
+      <li ng-click="getApply('under_way')" role="presentation" class="active"><a href="#wait-select" aria-controls="wait-select" role="tab" data-toggle="tab">待选标(10)</a></li>
+      <li ng-click="getApply('no_selected')" role="presentation"><a href="#no-select" aria-controls="no-select" role="tab" data-toggle="tab">未中标(10)</a></li>
+    </ul>
+    <!--内容-->
+    <div class="tab-content yzj-work-content">
+      <div role="tabpanel" class="tab-pane active" id="wait-select">
+        <table class="table project-table project-need work-table">
+          <tbody>
+            <tr ng-repeat="item in underway_works">
+              <td> 
+               <p class="release-title">
+                <span class="release-title-text size-14">
+                  <a href="/work/detail/{{item.id}}">{{item.title}}</a>
+                </span>
+                <span class="title-type-quicy">急</span>
+                <span class="title-type-replace">押</span>
+                <span><img src="/images/index/index-title-icon.png"></span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">发布者：{{item.username}} </span>
+                <span class="icon-distance">发布时间：{{item.publish_time * 1000 | date:'yyyy-mm-dd'}}</span>
+                <span class="icon-distance">截止时间：{{item.deadline * 1000 | date:'yyyy-mm-dd'}}</span>
+                <span class="icon-distance">分类：{{item.category_name}}</span>
+              </p>
+              <p class="release-title text-info">
+               <span class="icon-distance">我的报价：
+               <span class="text-warning">{{item.budget}}</span>元
+                </span>
+                <span class="icon-distance">开发周期：{{item.cycle}}天</span>
+                <span class="icon-distance">已有<span class="text-warning">{{item.apply_count}}
+                </span>
+                人报名
+              </span>              
+              <span class="label label-default success-fill">待选标</span>
+            </p>
+
+            <p class="release-title">
+            <span class="text-info">技能要求:</span>
+              <span ng-repeat="tag in item.tags"class="label label-default blacktext">{{tag}}</span>
+            </p>
+          </td>
+          <td>
+           <p class="release-title text-warning project-price">￥{{item.budget}}</p>
+            <p class="release-title text-info">预付款：￥{{item.advance}}</p>
+            <p>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <div class="table-line"></div>
+          </td>
+        </tr>
+  		</tbody>
+	</table>
+	</div>
+
+	
+	<div role="tabpanel" class="tab-pane" id="no-select">
+        <table class="table project-table project-need work-table">
+          <tbody>
+            <tr ng-repeat="item in no_selected_works">
+              <td> 
+               <p class="release-title">
+                <span class="release-title-text size-14">
+                  <a href="/work/detail/{{item.id}}">{{item.title}}</a>
+                </span>
+                <span class="title-type-quicy">急</span>
+                <span class="title-type-replace">押</span>
+                <span><img src="/images/index/index-title-icon.png"></span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">发布者：{{item.username}} </span>
+                <span class="icon-distance">发布时间：{{item.publish_time * 1000 | date:'yyyy-mm-dd'}}</span>
+                <span class="icon-distance">截止时间：{{item.deadline * 1000 | date:'yyyy-mm-dd'}}</span>
+                <span class="icon-distance">分类：{{item.category_name}}</span>
+              </p>
+              <p class="release-title text-info">
+               <span class="icon-distance">我的报价：
+               <span class="text-warning">{{item.budget}}</span>元
+                </span>
+                <span class="icon-distance">开发周期：{{item.cycle}}天</span>
+                <span class="icon-distance">已有<span class="text-warning">{{item.apply_count}}
+                </span>
+                人报名
+              </span>              
+              <span class="label label-default success-fill">未中标</span>
+            </p>
+
+            <p class="release-title">
+            <span class="text-info">技能要求:</span>
+              <span ng-repeat="tag in item.tags"class="label label-default blacktext">{{tag}}</span>
+            </p>
+          </td>
+          <td>
+           <p class="release-title text-warning project-price">￥{{item.budget}}</p>
+            <p class="release-title text-info">预付款：￥{{item.advance}}</p>
+            <p>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <div class="table-line"></div>
+          </td>
+        </tr>
+  		</tbody>
+	</table>
+	</div>
+	
+	
+</div>
+<!--分页-->
+<div class="page">
+  <nav>
+    <ul class="pagination pull-right">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">上一页</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">下一页</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/frontend/developer.js"></script>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.developer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

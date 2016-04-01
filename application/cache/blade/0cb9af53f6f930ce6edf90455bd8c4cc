@@ -1,0 +1,263 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('angular'); ?>
+ ng-controller="applyController"
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是开发者>WOKE平台><a href="#"><span class="text-warning">我的订单</span></a></div>
+</div>
+</div>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+  <div class="col-md-2">
+	<table class="table table-hover need-left yzj-work">
+		<tbody>
+		<tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/demand/index">需求者首页</a></td></tr>
+        <tr class="demand-menu-active"><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/demand/works">我的项目<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/demand/orders">我发包订单<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="#">众包任务管理<span class="pull-right"></span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span><a href="#"></a>GIT平台<span class="pull-right"></span></a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!--右侧-->
+  <div class="col-md-10 clear-both">
+       <!--表格1-->
+       <table class="col-md-12 table project-table clear-both">
+        <thead class="project-table-title">
+          <tr>
+            <td>标题 / 技能 / 发布者 / 时间</td>
+            <td width="25%" class="text-center">金额</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <p class="project-table-deta">
+            <td>
+			<p class="release-title">
+                <span class="release-title-text size-14">
+                  <a href="#"><?php echo $work['title']; ?></a>
+                </span>
+                <span class="title-type-quicy">急</span>
+                <span class="title-type-replace">押</span>
+                <span><img src="/images/index/index-title-icon.png"></span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">发布者：<?php echo $work['title']; ?> </span>
+                <span class="icon-distance">开始时间：<?php echo date('Y-m-d',$work['publish_time']); ?></span>
+                <span class="icon-distance">截止时间：<?php echo date('Y-m-d',$work['deadline']); ?></span>
+              </p>
+              <p class="release-title">
+              <span class="text-info">技能要求:</span>
+              	<?php foreach($work['tags'] as $tag): ?>
+                <span class="label label-default blacktext"><?php echo $tag; ?></span>
+              	<?php endforeach; ?>
+              </p>
+                <p class="release-title text-info">
+                  <span class="icon-distance">已有<span class="text-warning"><?php echo $work['apply_count']; ?></span>
+                  人报名
+                </span>
+                <span class="label label-default success-fill">
+                	<?php if($work['status'] == 1): ?>
+                	报名中
+                	<?php endif; ?>
+                	<?php if($work['status'] == 2): ?>
+                	等待付尾款
+                	<?php endif; ?>
+                	<?php if($work['status'] == 3): ?>
+                	开发中
+                	<?php endif; ?>
+                	<?php if($work['status'] == 4): ?>
+                	提交验收中
+                	<?php endif; ?>
+                	<?php if($work['status'] == 5): ?>
+                	已完成
+                	<?php endif; ?>
+                </span>
+              </p>
+            </td>
+            <td class="text-center">
+  			<p class="release-title text-warning project-price">￥<?php echo $work['budget']; ?></p>
+            <p class="release-title text-info">预付款：￥<?php echo $work['advance']; ?></p>
+            </td>
+          </tr>
+          
+        </tbody>
+    </table>
+       
+  <!--表格2-->
+       <table class="table project-table">
+        <thead class="project-table-title">
+          <tr>
+            <td width="15%">报名者</td>
+            <td>&nbsp;</td>
+            <td width="25%">报名信息</td>
+            <td width="15%">报名时间</td>
+            <td width="20%">操作</td>
+          </tr>
+        </thead>
+        <tbody>
+        <?php foreach($applies as $item): ?>
+          <tr>
+            <td><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle">
+            <?php if($item['status'] == 1): ?>
+            		已中标
+            <?php endif; ?>
+            <?php if($item['status'] == -1): ?>
+            		未中标
+            <?php endif; ?>
+            </td>
+          <p class="project-table-deta">
+            <td>
+              <p class="release-title">
+                <span class="release-title-text">
+                <a href="#" class="h5"><?php echo $item['user']['name']; ?></a> <img src="/images/need/need-V.png" width="17" height="14"> <span class="muted"> 学历：本科</span>
+                </span>
+              </p>
+              <p class="release-title">
+              <span class="muted">擅长技能:</span>
+              <?php foreach($item['user']['tags'] as $tag): ?>
+              <span class="label label-default blacktext"><?php echo $tag; ?></span>
+              <?php endforeach; ?>
+              </p>
+            </td>
+            <td>
+              <p class="release-title muted release-title-time">              
+              报价：<span class="text-warning">￥<?php echo $item['price']; ?></span><br/>
+              开发周期：<span class="text-warning"><?php echo $item['cycle']; ?>天</span>
+              </p>
+            </td>
+            <td><p class="release-title muted release-title-time"><?php echo date('Y-m-d',$item['created_at']); ?></p>
+            </td>
+            <?php if($work['status'] == 1): ?>
+            <td><button type="button" class="btn btn-success btn-width70 icon-distance">联系</button> 
+            <button type="button"  ng-click="selectbid(<?php echo $item['id']; ?>)"class="btn btn-primary btn-width70">选择中标</button>
+            </td>
+            <?php endif; ?>
+          </tr>
+          <tr>
+          <td colspan="5">
+            <div class="table-line"></div>
+          </td>
+          </tr>
+          <?php endforeach; ?>
+          
+          
+        </tbody>
+    </table>
+      <!--分页-->
+      <div class="page">
+        <nav>
+          <ul class="pagination pull-right">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">上一页</span>
+              </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">下一页</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+  </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+<!-- Modal 1 默认尺寸-->
+<div class="modal fade" id="hetong" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-warning" id="myModalLabel">选择中标</h4>
+      </div>
+        <div class="modal-body text-center">
+          <span class="size-16 text-muted">这是合同内容</span>
+        </div>	
+      <div class="modal-footer">
+     	 <button type="button" ng-click="apply_sure(apply)" class="btn btn-primary">选择并立即支付</button>
+      </div>
+        
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 3 默认尺寸-->
+<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-2-header">
+        <button onclick="location.href=location.href;" class="btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-2-title text-success" id="myModalLabel">选择中标成功</h4>
+      </div>
+        <div class="modal-2-body text-center">
+          <span id="message" class="size-16 text-muted">项目提交成功，等待耐心需求者审核！联系需求者</span>
+          <span  class="size-16 text-muted">还差一步！托管尾款成功后，开发者就可进行开发</span>
+        </div>	
+      <div class="modal-2-footer">
+       <a href="/demand/paybalance/<?php echo work.id; ?>" class="btn btn-success btn-lg btn-width140">立即托管尾款支付</a>
+      </div>
+        
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 2 默认尺寸-->
+<div class="modal fade" id="failed-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-2-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-2-title text-danger" id="myModalLabel">提 示</h4>
+      </div>
+        <div class="modal-2-body text-center">
+          <span id="message" class="size-16 text-muted"></span>
+        </div>	
+      <div class="modal-2-footer">
+       <a href="/demand/works" class="btn btn-danger btn-lg btn-width140">返回我项目</a>
+      </div>
+        
+    </div>
+  </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.demand', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

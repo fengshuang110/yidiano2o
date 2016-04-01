@@ -1,0 +1,139 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+ <!--需求者二级导航-->
+  <div class="dinner need-nav-second">
+  	<div class="container">
+  		<div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">档案管理</span></a></div>
+  	</div>
+  </div>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+		<span class="text-warning">50</span>元红包&nbsp;&nbsp;
+		<a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	</p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+<div class="col-md-2">
+		<table class="table table-hover need-left size-14">
+			<thead><tr><td class="text-center">需求者中心</td></tr></thead>
+			<tbody>
+			<tr><td>
+         <a href="/company/profile"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>个人中心
+      	 </a></td></tr>
+				<tr> <td>
+        <a href="/company/settings" ><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>
+        密码设置</a>
+        </td></tr>
+				<tr><td>
+          <a href="/company/contacts" ><span class="glyphicon glyphicon-user pull-left icon-distance"></span>
+        人脉</a></td></tr>
+				<tr><td>
+          <a href="/company/evaluation" ><span class="glyphicon glyphicon-comment pull-left icon-distance"></span>
+        评价</a></td></tr>
+				<tr><td>
+          <a href="/company/verify" ><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span>
+        身份认证</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+	
+  <!--右侧-->
+  <div class="col-md-10 check-page">
+  <h4 class="check-title">企业/个人工作室-档案管理</h4>
+  <div role="tabpanel" class="tab-pane active" id="home">
+  <form class="form-horizontal" id="company-form">
+   	<div class="form-group">
+       <label for="company_name" class="col-sm-3 control-label">企业名称 :</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control" value="<?php echo $profile['company_name']; ?>" name="company_name" placeholder="企业/工作室">
+         </div>
+    </div>
+    <div class="form-group">
+       <label for="leader" class="col-sm-3 control-label">企业负责人 :</label>
+       <div class="col-sm-6">
+           <input type="text" class="form-control"  value="<?php echo $profile['leader']; ?>" name="leader"  placeholder="企业负责人">
+       </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-3 control-label">企业类型 : </label>
+        <div class="col-sm-6">
+           <select class="form-control" name="type">
+	           <option <?php if($profile['type'] == 1): ?> selected <?php endif; ?> value="1">互联网金融</option>
+	           <option <?php if($profile['type'] == 2): ?> selected <?php endif; ?> value="2">互联网外包</option>
+	           <option <?php if($profile['type'] == 3): ?> selected <?php endif; ?> value="3">互联网电商</option>
+	           <option <?php if($profile['type'] == 4): ?> selected <?php endif; ?> value="4">互联网娱乐</option>
+	           <option <?php if($profile['type'] == 5): ?> selected <?php endif; ?> value="5">互联网电影</option>
+	           <option <?php if($profile['type'] == 6): ?> selected <?php endif; ?> value="6">互联网美食</option>
+           </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="scale" class="col-sm-3 control-label">规模 :</label>
+        <div class="col-sm-6">
+            <select class="form-control" name="scale">
+            	 <option <?php if($profile['scale'] == 1): ?> selected <?php endif; ?> value="1">10人以下</option>
+            	 <option <?php if($profile['scale'] == 2): ?> selected <?php endif; ?>  value="2">10-50人</option>
+            	 <option <?php if($profile['scale'] == 3): ?> selected <?php endif; ?>  value="3">50-100人</option>
+            	 <option <?php if($profile['scale'] == 4): ?> selected <?php endif; ?>  value="4">100-500人</option>
+            	 <option <?php if($profile['scale'] == 5): ?> selected <?php endif; ?>  value="5">500-2000人</option>
+            	 <option <?php if($profile['scale'] == 6): ?> selected <?php endif; ?>  value="6">2000人以上</option>
+            </select>
+     	</div>
+    </div>
+     <div class="form-group">
+        <label for="address" class="col-sm-3 control-label">地址:</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control" value="<?php echo $profile['address']; ?>" name="address" placeholder="地址">
+        </div>
+    </div>
+     <div class="form-group">
+        <label for="phone" class="col-sm-3 control-label">电话:</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control"   value="<?php echo $profile['phone']; ?>"  name="phone" placeholder="电话">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-sm-3 control-label">邮箱 :</label>
+        <div class="col-sm-6">
+          <input type="email" class="form-control" value="<?php echo $profile['email']; ?>" name="email" placeholder="邮箱">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="desc" class="col-sm-3 control-label">企业简介 :</label>
+        <div class="col-sm-6">
+            <textarea class="form-control"  name="desc" rows="5"  placeholder="企业简介"><?php echo $profile['desc']; ?></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-3 text-center">
+        <button type="submit" class="btn btn-lg btn-primary btn-width140 icon-distance">下一步</button>  
+        </div>
+    </div>
+  	</form>  			
+  </div>
+  <!--企业档案 结束-->
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/bootstrapValidator.js"></script>
+<script src="/js/frontend/company.js"></script>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.demand', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

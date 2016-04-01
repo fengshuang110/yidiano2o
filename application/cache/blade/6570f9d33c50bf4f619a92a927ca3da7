@@ -1,0 +1,65 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+</div>
+</div>
+
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+		<span class="text-warning">50</span>元红包&nbsp;&nbsp;
+		<a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	</p>
+</div>
+<!--主体开始-->
+  <div class="container need-main">
+      <div class="right-title main-title margin15-top">资金管理</div>
+      <div class="check-page person-center center-pj need-main">
+        <div class="col-md-6">
+        <div class="panel panel-default clear-both">
+          <div class="panel-heading size-16 maneger-title">托管金额</div>
+          <div class="panel-body text-warning text-center">
+            <p class="maneger-money">￥<?php echo $account['amount']; ?></p>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-6">
+        <div class="panel panel-default clear-both">
+          <div class="panel-heading maneger-title">
+          <div class="pull-left size-16">账户余额</div>
+          <div class="pull-right">
+              <p class="center-label">立即提现</p>
+          </div>
+          <div class="clearfix"></div>
+          </div>
+          <div class="panel-body text-warning text-center">
+            <p class="maneger-money">￥<?php echo $account['trust_amount']; ?></p>
+          </div>
+      </div>
+    </div>
+ </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.account', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,222 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+</div>
+</div>
+
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+		<span class="text-warning">50</span>元红包&nbsp;&nbsp;
+		<a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	</p>
+</div>
+<!--主体开始-->
+<div class="container need-main">
+      <!--行号-->
+      <div class="right-title main-title margin15-top">我的行号</div>
+      <div class="check-page person-center center-pj need-main">
+        <div class="pull-right size-16">
+          <a href="#" data-toggle="modal" data-target="#bank-modal">
+          <span class="caret icon-distance"></span>添加银行卡</a>
+          <a href="#" data-toggle="modal" data-target="#alipay-modal">
+          <span class="caret icon-distance"></span>添加支付宝</a>
+        </div>
+        <div class="clearfix"></div>
+        <table class="table table-bordered top-distance30 text-center money-table">
+          <thead class="project-table-title">
+            <tr>
+              <td>卡号</td>
+              <td>银行</td>
+              <td>姓名</td>
+              <td>提示</td>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach($records as $item): ?>
+            <tr>
+              <td class="text-gray size-14">
+                <?php echo $item['account']; ?>
+
+              </td>
+              <td class="text-gray size-14">
+                <?php echo $item['type_name']; ?>
+
+              </td>
+              <td class="text-gray size-14">
+               <?php echo $item['realname']; ?>
+
+              </td>
+              <td class="text-gray size-14">
+              	一旦提交不可更改，需更改联系客服
+              </td>
+            </tr>
+		<?php endforeach; ?>
+          </tbody>
+      </table>
+
+      </div>
+</div>
+ 
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+<!-- Modal 1 默认尺寸-->
+<div class="modal fade" id="alipay-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-warning" id="myModalLabel">添加支付宝</h4>
+      </div>
+      <!-- 主体-->
+      <div class="modal-body">
+         <form class="form-horizontal" id="alipay-form">
+            <div class="form-group">
+              <label for="" class="col-sm-4 control-label clear-right">姓名：</label>
+              <div class="col-sm-8 clear-left">
+                <input type="text" class="form-control" name="realname" placeholder="姓名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-4 control-label clear-right">支付宝账号：</label>
+              <div class="col-sm-8 clear-left">
+                <input type="text" class="form-control" name="account" placeholder="支付宝账号">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label clear-right">验证码：</label>
+              <div class="col-sm-5 clear-left">
+                <input type="text" class="form-control" name="vcode" placeholder="">
+              </div>
+              <div class="col-sm-2 clear-both btn btn-primary btn-grayline">发送</div>
+            </div>
+           	 <div class="modal-footer">
+		        <button type="submit" class="btn btn-primary btn-lg btn-width140">确定</button>
+		     </div>
+          </form>
+   </div> 
+     <!-- 主体结束-->
+      
+        
+    </div>
+  </div>
+</div>
+<!-- Modal 1结束-->
+
+<!-- Modal 2 默认尺寸-->
+<div class="modal fade" id="bank-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-warning" id="myModalLabel">添加银行卡</h4>
+      </div>
+           <!-- 主体-->
+      <div class="modal-body">
+         <form class="form-horizontal" id="bankcard-form">
+            <div class="form-group">
+              <label for="" class="col-sm-4 control-label clear-right">姓名：</label>
+              <div class="col-sm-8 clear-left">
+                <input type="text" class="form-control" name="realname" placeholder="姓名">
+              </div>
+            </div>
+             <div class="form-group">
+              <label for="" class="col-sm-4 control-label clear-right">选择银行：</label>
+              <div class="col-sm-8 clear-left">
+              	<select class="form-control" name="banktype">
+              		<option value="0001">招商银行</option>
+              		<option value="0002">中国银行</option>
+              		<option value="0003">建设银行</option>
+              		<option value="0004">工商银行</option>
+              	</select>
+              </div>
+            </div>
+             <div class="form-group">
+              <label  class="col-sm-4 control-label clear-right">银行账号：</label>
+              <div class="col-sm-8 clear-left">
+                <input type="text" class="form-control" name="account" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-4 control-label clear-right">验证码：</label>
+              <div class="col-sm-5 clear-left">
+                <input type="text" class="form-control" name="vcode" placeholder="">
+              </div>
+              <div class="col-sm-2 clear-both btn btn-primary btn-grayline">发送</div>
+            </div>
+            	<div class="modal-footer">
+		        	<button type="submit" class="btn btn-primary btn-lg btn-width140">确定</button>
+		        </div>
+          </form>
+   </div> 
+     <!-- 主体结束-->
+      
+        
+    </div>
+  </div>
+</div>
+<!-- Modal 2结束-->
+
+
+<!-- Modal 3 默认尺寸-->
+<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-2-header">
+        <button onclick="location.href=location.href;" class="btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-2-title text-success" id="myModalLabel">操作成功</h4>
+      </div>
+        <div class="modal-2-body text-center">
+          <span id="message" class="size-16 text-muted">项目提交成功，等待耐心需求者审核！联系需求者</span>
+        </div>	
+      <div class="modal-2-footer">
+       <button onclick="location.href=location.href;" class="btn btn-success btn-lg btn-width140">返回账户</button>
+      </div>
+        
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 默认尺寸-->
+<div class="modal fade" id="failed-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-2-header">
+        <button  onclick="location.href=location.href;" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-2-title text-danger" id="myModalLabel">提 示</h4>
+      </div>
+        <div class="modal-2-body text-center">
+          <span id="message" class="size-16 text-muted"></span>
+        </div>	
+      <div class="modal-2-footer">
+       <button onclick="location.href=location.href;" class="btn btn-danger btn-lg btn-width140">返回账户</button>
+      </div>
+        
+    </div>
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/bootstrapValidator.js"></script>
+<script src="/js/frontend/account.js"></script>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.account', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

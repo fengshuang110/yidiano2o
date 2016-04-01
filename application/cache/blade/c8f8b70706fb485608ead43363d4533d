@@ -1,0 +1,316 @@
+<?php $__env->startSection('style'); ?>
+ <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+ <?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+ <!--需求者一级导航-->
+  <div class="dinner need-nav">
+  <div class="container">
+  	 <ul class="nav needer pull-left">
+  	 	<li><a href="#">首页</a></li>
+  	 	<li><a href="#">任务管理</a></li>
+  	 	<li><a href="#">沃客钱包</a></li>
+  	</ul>
+  	<ul class="nav needer pull-right">
+  		<li><a href="#">社区</a></li>
+  		<span class="resume-line">|</span>
+  		<li><a href="#">新手入门</a></li>
+  	</ul>
+  </div>
+  </div>
+  <!--需求者二级导航-->
+  <div class="dinner need-nav-second">
+  	<div class="container">
+  		<div class="pull-right text-info text-distance">当前位置：我是需求者 > 任务管理 > <a href="#"><span class="text-warning">发布任务</span></a></div>
+  	</div>
+  </div>
+</nav>
+<!--主体开始-->
+<div class="container clear-both need-main">
+
+	<div class="col-md-9">
+			<div class="need-centerline">              
+                <table class="table liucheng2-table">
+                  <tr>
+                    <td width="25%">
+                      <div class="liucheng2-hr"></div>    
+                      <p class="liucheng2-text">01  报名选标</p>
+                      <p class="liucheng2-icon nav-image">
+                      <img src="/images/need/need-step-01-open.png">
+                      </p>     
+                    </td>
+                     <td width="25%">
+                      <div class="liucheng2-hr"></div>    
+                      <p class="liucheng2-text">02  开发交付</p>
+                      <p class="liucheng2-icon nav-image">
+                      <img src="/images/need/need-step-02-open.png">
+                      </p>            
+                   </td>
+                     <td width="25%">
+                      <div class="liucheng2-hr"></div>    
+                      <p class="liucheng2-text">03  项目验收</p>
+                      <p class="liucheng2-icon nav-image">
+                      <img src="/images/need/need-step-03-open.png">
+                      </p>             
+                   </td>
+                     <td width="25%">
+                      <p class="liucheng2-text">04  评价</p>
+                      <p class="liucheng2-icon nav-image">
+                      <img src="/images/need/need-step-04-open.png">
+                      </p>                   
+                    </td>
+                  </tr>
+                </table>
+                
+              <h4>项目验收 <small class="text-warning">( * 为必填 )</small></h4>
+              <hr>
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label"><span class="icon-distance text-warning">*</span>项目名称：</label>
+                  <div class="col-sm-7">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="项目名称">
+                  </div>
+                </div>
+
+				<div class="form-group">
+                  <label for="inputPassword3" class="col-sm-3 control-label">项目类型：</label>
+                  <div class="col-sm-7">
+                    <select class="form-control">
+					<option>桌面应用</option>
+					<option>桌面应用</option>
+					<option>桌面应用</option></select>
+                  </div>
+                </div>
+               <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-3 control-label"><span class="icon-distance text-warning">
+*</span>技能要求：</label>
+                  <div class="col-sm-7">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="语言/技能">
+                  </div>
+				  <div class="col-sm-2" style="margin-left:-25px;"><a   data-toggle="modal" data-target="#select-skill" class="btn btn-primary form-control">从列表中选择</a> </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label"><span class="icon-distance text-warning">*</span>项目预算：</label>
+                  <div class="col-sm-7">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="5">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label"><span class="icon-distance text-warning">*</span>项目预付款：</label>
+                  <div class="col-sm-7">
+                    <select class="form-control">
+					<option>50元</option>
+					<option>100元</option>
+					<option>200元</option>
+					<option>500元</option>
+					<option>1000元</option>
+					<option>10%</option>
+					</select>
+                  </div>
+                </div>
+			<div class="form-group">
+					<label for="dtp_input2" class="col-sm-3 control-label"><span class="icon-distance text-warning">*</span>项目截止时间：
+					</label>
+					<div style="margin-left:205px;"class="input-group date form_date col-sm-7" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+						<input  class="form-control" size="16" type="text">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+					</div>
+					<input type="hidden" id="dtp_input2" value="" /><br/>
+				</div>
+
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label"><span class="icon-distance text-warning">*</span>项目紧急度：</label>
+                  <div class="col-sm-7">
+                    <select class="form-control">
+					<option>一般</option>
+					<option>紧急</option>
+					<option>非常紧急</option>
+					</select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label"><span class="icon-distance text-warning">
+*</span>需求描述：</label>
+                    <div class="col-sm-3">
+                    <button class="btn btn-default btn-block"><img class="icon-distance" src="/images/need/need-left-icon02.png">参考模板</button>
+                    </div>
+                    <div class="col-sm-3">
+                    <button class="btn btn-info btn-block"><img class="icon-distance" src="/images/need/need-btn-icon01.png">下载附件</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-7 col-md-offset-3">
+                    <textarea class="form-control" rows="10"></textarea>
+                   </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                     <button class="btn btn-lg btn-primary btn-width140 icon-distance">下一步</button>  
+                     <button class="btn btn-lg btn-success btn-width140">预览</button>
+                   </div>
+                </div>
+              </form>
+                
+		</div>
+	</div>
+    <!--右侧-->
+	<div class="col-md-3 clear-left">
+      <div class="right-main-content" style="margin-top:0px;">
+        <!--三大保障-->
+        <div class="right-xueyuan" style="margin-top:0px;">
+          <p class="right-title">选择云沃客的三大保障</p>
+          
+            <div class="media">
+              <div class="media-left need-baozhang">
+                 <img class="media-object " src="/images/need/need-baozhang_01.png" alt="...">
+              </div>
+              <div class="media-body padding13-left">
+                <h5 class="media-heading text-warning">先验收，再付款</h5>
+                <span class="muted">任务验收前，资金只托管在平台上，不会打到对方账户</span>
+              </div>
+            </div><hr>
+            
+            <div class="media">
+              <div class="media-left need-baozhang">
+                <a href="#">
+                  <img class="media-object" src="/images/need/need-baozhang_02.png" alt="...">
+                </a>
+              </div>
+              <div class="media-body padding13-left">
+                <h5 class="media-heading text-warning">任务进度可追踪</h5>
+                <span class="muted">先进的项目管理工具，远程同步任务动态</span>
+              </div>
+            </div><hr>
+            
+            <div class="media">
+              <div class="media-left need-baozhang">
+                <a href="#">
+                  <img class="media-object" src="/images/need/need-baozhang_03.png" alt="...">
+                </a>
+              </div>
+              <div class="media-body padding13-left">
+                <h5 class="media-heading text-warning">第三方监控零纠纷</h5>
+                <span class="muted">专业的实时聊天工具，沟通细节全记录</span>
+              </div>
+            </div>
+            
+        </div><!--三大保障结束-->
+      </div>
+    </div>
+    <!--右侧结束-->
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<!-- Modal 1 默认尺寸弹出框-->
+<div class="modal fade" id="select-skill" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-header" style="padding:2px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-warning" id="myModalLabel">选择技能</h4>
+      </div>
+      
+      <!-- 主体-->
+      <div class="modal-body" >
+         <form class="form-horizontal">
+				 <div class="form-group">
+					<div class="page-header" style="margin:0 0 10px"><h4><small>开发语言</small></h4></div>
+					<div class="checkbox col-sm-4" class="">
+						<label>
+							<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+						</label>
+					</div>	
+					<div class="checkbox col-sm-4" class="">
+						<label>
+							<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+						</label>
+					</div>
+					<div class="checkbox col-sm-4" class="">
+						<label>
+							<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+						</label>
+					</div>	
+					<div class="checkbox col-sm-4" class="">
+						<label>
+							<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+						</label>
+					</div>
+					</div>   
+
+
+					 <div class="form-group">
+			<div class="page-header" style="margin:0 0 10px"><h4><small>开发语言</small></h4></div>
+			<div class="checkbox col-sm-4" class="">
+				<label>
+					<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+				</label>
+			</div>	
+			<div class="checkbox col-sm-4" class="">
+				<label>
+					<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+				</label>
+			</div>
+			<div class="checkbox col-sm-4" class="">
+				<label>
+					<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+				</label>
+			</div>	
+			<div class="checkbox col-sm-4" class="">
+				<label>
+					<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+				</label>
+			</div>
+            </div> 
+
+			 <div class="form-group">
+			<div class="page-header" style="margin:0 0 10px"><h4><small>开发语言</small></h4></div>
+			<div class="checkbox col-sm-4" class="">
+				<label>
+					<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+				</label>
+			</div>	
+			<div class="checkbox col-sm-4" class="">
+				<label>
+					<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+				</label>
+			</div>
+			<div class="checkbox col-sm-4" class="">
+				<label>
+					<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+				</label>
+			</div>	
+			<div class="checkbox col-sm-4" class="">
+				<label>
+					<input type="checkbox" name="languages[]" value="english" data-bv-field="languages[]"> English
+				</label>
+			</div>
+            </div> 
+          </form>
+   </div> 
+     <!-- 主体结束-->
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-lg btn-width140">确定</button>
+       </div>
+        
+    </div>
+  </div>
+</div>
+<!-- Modal 1结束-->
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script type="text/javascript" src="/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="/js/frontend/work.js"></script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,346 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+</div>
+</div>
+</nav>
+<div class="container text-info">
+	<div class="alert alert-info alert-dismissible size-14 margin15-top" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <img src="/images/need/need-title-icon.png" class="icon-distance">您尚未完成认证，会影响您发布项目，立即认证可获得<span class="text-warning">50</span>元红包&nbsp;&nbsp;<a href="#" class="alert-link">立即去认证 ></a>
+    </div>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+	<div class="col-md-2">
+		<table class="table table-hover need-left size-14">
+			<thead><tr><td> 开发者中心</td></tr></thead>
+			<tbody>
+			<tr><td>
+         <a href="/user/profile"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>个人中心
+      	 </a></td></tr>
+				<tr><td>
+         <a href="/user/settings"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>账号安全
+      	 </a></td></tr>
+        	<tr><td>
+          <a href="/user/resume"><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span>
+        	个人简历
+         </a></td></tr>
+         
+		<tr><td>
+           <a href="/user/contacts"><span class="glyphicon glyphicon-user pull-left icon-distance"></span>
+        人脉</a></td></tr>
+				<tr><td>
+           <a href="/user/evaluation"><span class="glyphicon glyphicon-comment pull-left icon-distance"></span>
+        评价</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+	
+	
+  <!--右侧-->
+  <div class="col-md-10 check-page">
+    <!--分类-->
+    <h4 class="check-title">人脉</h4>
+    <div class="col-md-12 clear-both" role="tablist">
+      <div class="col-md-4 active">
+        <div class="person-number">
+          <div class="person-number-insert active">
+            <div class="media">
+              <a class="pull-right" href="#">
+                <img class="media-object img-circle" src="/images/need/person-title-list.png">
+              </a>
+              <div class="media-body person-title-list">
+              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                <h4 class="text-info size-18">成功交易的企业</h4>
+                <p class="text-info size-16">（10）</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="person-number">
+          <div class="person-number-insert" onmouseover="this.style.cursor='pointer'" onclick="document.location='#profile'" aria-controls="profile" role="tab" data-toggle="tab">
+            <div class="media">
+              <a class="pull-right" href="#">
+                <img class="media-object img-circle" src="/images/need/person-title-list02.png">
+              </a>
+              <div class="media-body person-title-list">
+              <a href="#profile" aria-controls="home" role="tab" data-toggle="tab">
+                <h4 class="text-info size-18">成功报名的项目</h4>
+                <p class="text-info size-16">（10）</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="person-number">
+          <div class="person-number-insert" onmouseover="this.style.cursor='pointer'" onclick="document.location='#messages'" aria-controls="messages" role="tab" data-toggle="tab">
+            <div class="media person-source">
+              <a class="pull-right" href="#">
+                <img class="media-object img-circle" src="/images/need/person-title-list03.png">
+              </a>
+              <div class="media-body person-title-list">
+              <a href="#messages" aria-controls="home" role="tab" data-toggle="tab">
+                <h4 class="text-info size-18">我的好友</h4>
+                <p class="text-info size-16">（10）</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <!--个人-->
+      <div class="tab-content">
+      <!--第一个选项卡-->
+        <div class="tab-pane row person-detail active" role="tabpanel" id="home">
+          <!--第一个-->
+          <div class="col-md-12 person-details">
+            <div class="col-md-1 clear-both top-distance">
+              <img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle">
+            </div>
+            <div class="col-md-4">
+              <p class="release-title">
+                中国北京常平科技有限公司
+                <img src="/images/need/v-icon.png"/>
+              </p>
+              <p class="release-title text-info">
+                学历：本科
+              </p>
+              <p class="release-title text-info">
+                <span class="text-info">企业规模:</span>
+                <span class="text-warning">100-599人</span>
+              </p>
+            </div>
+            <div class="col-md-3 text-right">
+              <p class="release-title text-info">APP系统开发</p>
+              <p class="release-title text-info">项目成交金额
+                <span class="text-warning">￥10,000</span>
+              </p>
+              <p class="release-title text-info">完成时间：2015-12-06</p>
+                  <!-- <p class="release-title muted">
+                  APP系统开发<br/>              
+                  报价：<span class="text-warning">￥880,000</span><br/>
+                  开发周期：<span class="text-warning">14天</span>
+                </p> -->
+              </div>
+              <div class="col-md-4 text-right top-distance">
+                <button type="button" class="btn btn-primary btn-width70">联系</button>
+              </div>
+            </div>
+            <!--二-->
+            <div class="col-md-12 person-details">
+              <div class="col-md-1 clear-both top-distance"><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></div>
+               <div class="col-md-4">
+              <p class="release-title">
+                中国北京常平科技有限公司
+                <img src="/images/need/v-icon.png"/>
+              </p>
+              <p class="release-title text-info">
+                学历：本科
+              </p>
+              <p class="release-title text-info">
+                <span class="text-info">企业规模:</span>
+                <span class="text-warning">100-599人</span>
+              </p>
+            </div>
+              <div class="col-md-3 text-right">
+                <p class="release-title text-info">APP系统开发</p>
+                <p class="release-title text-info">项目成交金额
+                  <span class="text-warning">￥10,000</span>
+                </p>
+                <p class="release-title text-info">完成时间：2015-12-06</p>
+                  <!-- <p class="release-title muted">
+                  APP系统开发<br/>              
+                  报价：<span class="text-warning">￥880,000</span><br/>
+                  开发周期：<span class="text-warning">14天</span>
+                </p> -->
+              </div>
+              <div class="col-md-4 text-right top-distance">
+                <button type="button" class="btn btn-primary btn-width70">联系</button>
+              </div>
+            </div>
+            <div class="col-md-12 person-details">
+              <div class="col-md-1 clear-both top-distance"><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></div>
+               <div class="col-md-4">
+              <p class="release-title">
+                中国北京常平科技有限公司
+                <img src="/images/need/v-icon.png"/>
+              </p>
+              <p class="release-title text-info">
+                学历：本科
+              </p>
+              <p class="release-title text-info">
+                <span class="text-info">企业规模:</span>
+                <span class="text-warning">100-599人</span>
+              </p>
+            </div>
+              <div class="col-md-3 text-right">
+                <p class="release-title text-info">APP系统开发</p>
+                <p class="release-title text-info">项目成交金额
+                  <span class="text-warning">￥10,000</span>
+                </p>
+                <p class="release-title text-info">完成时间：2015-12-06</p>
+                  <!-- <p class="release-title muted">
+                  APP系统开发<br/>              
+                  报价：<span class="text-warning">￥880,000</span><br/>
+                  开发周期：<span class="text-warning">14天</span>
+                </p> -->
+              </div>
+              <div class="col-md-4 text-right top-distance">
+                <button type="button" class="btn btn-primary btn-width70">联系</button>
+              </div>
+            </div>
+            <div class="col-md-12 person-details">
+              <div class="col-md-1 clear-both top-distance"><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></div>
+                <div class="col-md-4">
+              <p class="release-title">
+                中国北京常平科技有限公司
+                <img src="/images/need/v-icon.png"/>
+              </p>
+              <p class="release-title text-info">
+                学历：本科
+              </p>
+              <p class="release-title text-info">
+                <span class="text-info">企业规模:</span>
+                <span class="text-warning">100-599人</span>
+              </p>
+            </div>
+              <div class="col-md-3 text-right">
+                <p class="release-title text-info">APP系统开发</p>
+                <p class="release-title text-info">项目成交金额
+                  <span class="text-warning">￥10,000</span>
+                </p>
+                <p class="release-title text-info">完成时间：2015-12-06</p>
+                  <!-- <p class="release-title muted">
+                  APP系统开发<br/>              
+                  报价：<span class="text-warning">￥880,000</span><br/>
+                  开发周期：<span class="text-warning">14天</span>
+                </p> -->
+              </div>
+              <div class="col-md-4 text-right top-distance">
+                <button type="button" class="btn btn-primary btn-width70">联系</button>
+              </div>
+            </div>
+            <div class="col-md-12 person-details">
+              <div class="col-md-1 clear-both top-distance"><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></div>
+                <div class="col-md-4">
+              <p class="release-title">
+                中国北京常平科技有限公司
+                <img src="/images/need/v-icon.png"/>
+              </p>
+              <p class="release-title text-info">
+                学历：本科
+              </p>
+              <p class="release-title text-info">
+                <span class="text-info">企业规模:</span>
+                <span class="text-warning">100-599人</span>
+              </p>
+            </div>
+              <div class="col-md-3 text-right">
+                <p class="release-title text-info">APP系统开发</p>
+                <p class="release-title text-info">项目成交金额
+                  <span class="text-warning">￥10,000</span>
+                </p>
+                <p class="release-title text-info">完成时间：2015-12-06</p>
+                  <!-- <p class="release-title muted">
+                  APP系统开发<br/>              
+                  报价：<span class="text-warning">￥880,000</span><br/>
+                  开发周期：<span class="text-warning">14天</span>
+                </p> -->
+              </div>
+              <div class="col-md-4 text-right top-distance">
+                <button type="button" class="btn btn-primary btn-width70">联系</button>
+              </div>
+            </div>
+            <div class="col-md-12 person-details">
+              <div class="col-md-1 clear-both "><img src="/images/index/default-img.png" alt="..." width="60" height="60" class="img-circle"></div>
+               <div class="col-md-4">
+              <p class="release-title">
+                中国北京常平科技有限公司
+                <img src="/images/need/v-icon.png"/>
+              </p>
+              <p class="release-title text-info">
+                学历：本科
+              </p>
+              <p class="release-title text-info">
+                <span class="text-info">企业规模:</span>
+                <span class="text-warning">100-599人</span>
+              </p>
+            </div>
+              <div class="col-md-3 text-right">
+                <p class="release-title text-info">APP系统开发</p>
+                <p class="release-title text-info">项目成交金额
+                  <span class="text-warning">￥10,000</span>
+                </p>
+                <p class="release-title text-info">完成时间：2015-12-06</p>
+                  <!-- <p class="release-title muted">
+                  APP系统开发<br/>              
+                  报价：<span class="text-warning">￥880,000</span><br/>
+                  开发周期：<span class="text-warning">14天</span>
+                </p> -->
+              </div>
+              <div class="col-md-4 text-right top-distance">
+                <button type="button" class="btn btn-primary btn-width70 ">联系</button>
+              </div>
+            </div>
+        </div>
+        <!--第二个选项卡-->
+         <div role="tabpanel" class="tab-pane row person-detail" id="profile">
+                与成功交易人数格式一样
+         </div>
+         <!--第三个选项卡-->
+         <div role="tabpanel" class="tab-pane row person-detail" id="messages">
+              与成功交易人数格式一样
+         </div>
+      </div>
+    </div>
+    <!--分页开始-->
+    <div class="page">
+      <nav>
+        <ul class="pagination pull-right">
+          <li>
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">上一页</span>
+            </a>
+          </li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>
+            <a href="#" aria-label="Next">
+              <span aria-hidden="true">下一页</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.developer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

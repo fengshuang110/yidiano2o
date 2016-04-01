@@ -1,0 +1,286 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+</div>
+</div>
+</nav>
+<div class="container text-info">
+	<div class="alert alert-info alert-dismissible size-14 margin15-top" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <img src="/images/need/need-title-icon.png" class="icon-distance">您尚未完成认证，会影响您发布项目，立即认证可获得<span class="text-warning">50</span>元红包&nbsp;&nbsp;<a href="#" class="alert-link">立即去认证 ></a>
+    </div>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+<div class="col-md-2">
+		<table class="table table-hover need-left size-14">
+			<thead><tr><td class="text-center">需求者中心</td></tr></thead>
+			<tbody>
+			<tr><td>
+         <a href="/company/profile"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>个人中心
+      	 </a></td></tr>
+				<tr> <td>
+        <a href="/company/settings" ><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>
+        密码设置</a>
+        </td></tr>
+				<tr><td>
+          <a href="/company/contacts" ><span class="glyphicon glyphicon-user pull-left icon-distance"></span>
+        人脉</a></td></tr>
+				<tr><td>
+          <a href="/company/evaluation" ><span class="glyphicon glyphicon-comment pull-left icon-distance"></span>
+        评价</a></td></tr>
+				<tr><td>
+          <a href="/company/verify" ><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span>
+        身份认证</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+	
+  <!--右侧-->
+  <div class="col-md-10 clear-both">
+  <!--个人资料-->
+      <div class="check-page person-center">
+      <a href="/company/editprofile"><img class="kaifa-ziliao-pen2" src="/images/need/kaifa-ziliao-pen.png" width="30" height="30"></a> 
+        <div class="col-md-3 clear-left text-center">
+          <div class="col-md-12 center-tx2 clear-both">
+            <div class="col-md-3"></div>
+          <div class="col-md-6 text-center">
+            <img class="img-circle" src="/images/index/default-img.png" width="60px" height="60px"/>
+            <span class="need-addv"><img src="/images/need/need-V.png"></span>
+            <p class="center-label project-need">更改头像</p>
+          </div>
+          <div class="col-md-3"></div>
+          </div>
+          <div class="col-md-12 center-lv2 clear-both text-center">
+            <!--进度条-->
+            <p class="pull-left icon-distance col-m2 text-warning size-14" style="font-weight: bold">LV5</p>
+             <div class="progress col-md-6 clear-both pull-left icon-distance">
+              <div class="progress-bar pull-left" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <span class="sr-only">60% Complete</span>
+              </div>
+            </div>
+            <p class="pull-left col-md-2 clear-both">
+              <span class="text-warning">80/</span><span>100</span>
+            </p>
+            <div class="clearfix"></div>
+            <div class="text-info top-distance30 text-center">
+                <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+                <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+                <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+                <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+                <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 person-detail size-14">
+          <div class="col-md-12 clear-both">
+              <div class="col-md-6 clear-left size-16">名称：<?php echo $profile['company_name']; ?>&nbsp;&nbsp;&nbsp;<span class="text-warning">未认证</span></div>
+           		<div class="col-md-6 clear-left size-16">企业负责人：<?php echo $profile['leader']; ?></div>
+          </div>
+          
+           <div class="col-md-12 clear-both top-distance30">
+              <div class="col-md-6 clear-left size-16">企业类型：<?php echo $profile['type']; ?></div>
+           		<div class="col-md-6 clear-left size-16">企业规模：<?php echo $profile['scale']; ?></div>
+          </div>
+          
+           <div class="col-md-12 clear-both top-distance30">
+              <div class="col-md-6 clear-left size-16">企业电话：<?php echo $profile['phone']; ?></div>
+           	  <div class="col-md-6 clear-left size-16">企业邮箱：<?php echo $profile['email']; ?>&nbsp;&nbsp;&nbsp;<span class="text-warning">未验证</span></div>
+          </div>
+          
+           <div class="col-md-12 clear-both top-distance30">
+              <div class="col-md-6 clear-left size-16">企业地址：<?php echo $profile['address']; ?></div>
+          </div>
+          <div class="col-md-12 clear-both top-distance30">
+              <div class="col-md-12 clear-left size-16">企业说明：<p class="size-14">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $profile['desc']; ?></p></div>
+          </div>
+        </div>
+       
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+  
+   <!--4种项目-->
+      <div class="margin15-top">
+        <table class="table table-hover liucheng-table clear-both">
+          <tbody>
+            <tr>
+            <td class="liucheng-hover">
+                <div class="media paddingbox-60" >
+                <div class="media-left media-middle margin40-right">
+                  <a href="#"><img src="/images/need/need-myhome_01.png" width="81" height="81" class="media-object"></a>
+                </div>
+                <div class="media-body text-left size-14">
+                  <h4 class="size-18">正在发布中的项目：<span class="text-warning">10</span></h4>
+                  查看项目列表 >
+                </div>
+               </div>
+            </td>
+            <td class="liucheng-hover">
+                <div class="media paddingbox-60" >
+                <div class="media-left media-middle margin40-right">
+                  <a href="#"><img src="/images/need/need-myhome_02.png" width="81" height="81" class="media-object"></a>
+                </div>
+                <div class="media-body text-left size-14">
+                  <h4 class="size-18">待付款项目：<span class="text-warning">10</span></h4>
+                  查看项目列表 >
+                </div>
+               </div>
+            </td>
+            </tr>
+            <tr>
+            <td class="liucheng-hover">
+                <div class="media paddingbox-60" >
+                <div class="media-left media-middle margin40-right">
+                  <a href="#"><img src="/images/need/need-myhome_03.png" width="81" height="81" class="media-object"></a>
+                </div>
+                <div class="media-body text-left size-14">
+                  <h4 class="size-18">正在执行中的合同：<span class="text-warning">10</span></h4>
+                  查看项目列表 >
+                </div>
+               </div>
+            </td>
+            <td class="liucheng-hover">
+                <div class="media paddingbox-60" >
+                <div class="media-left media-middle margin40-right">
+                  <a href="#"><img src="/images/need/need-myhome_04.png" width="81" height="81" class="media-object"></a>
+                </div>
+                <div class="media-body text-left size-14">
+                  <h4 class="size-18">等待选标的项目：<span class="text-warning">10</span></h4>
+                  查看项目列表 >
+                </div>
+               </div>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+  <!--4种项目结束-->
+  
+  <!--交易记录-->
+      <div class="right-title per-center-title">交易记录
+        <p class="pull-right size-14">
+      <a href="#">
+        我的沃客平台>>
+      </a>
+        </p>
+      </div>
+      <div class="check-page person-center center-pj" >
+        <div class="col-md-6" id="canvas-holder">
+            <canvas id="chart-area" width="218" height="218"/>
+        </div>
+        <div class="col-md-6">
+          <canvas id="canvas" height="250" width="390"></canvas>
+        </div>
+      </div>
+  <!--人脉-->
+  <div class="right-title per-center-title">人脉</div>
+  <div class="check-page person-number-count">
+      <div class="col-md-4 active">
+        <div class="person-number person-success">
+          <div class="person-number-insert person-success">
+            <div class="media">
+              <a class="pull-right" href="#">
+                <img class="media-object img-circle" src="/images/need/person-title-list.png">
+              </a>
+              <div class="media-body person-title-list">
+              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                <h4 class="text-info size-18">成功交易人数</h4>
+                <p class="text-info size-16">（10）</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 active">
+        <div class="person-number person-baoming">
+          <div class="person-number-insert person-baoming">
+            <div class="media">
+              <a class="pull-right" href="#">
+                <img class="media-object img-circle" src="/images/need/person-title-list02.png">
+              </a>
+              <div class="media-body person-title-list">
+              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                <h4 class="text-info size-18">报名人数</h4>
+                <p class="text-info size-16">（10）</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 active">
+        <div class="person-number person-myfriend">
+          <div class="person-number-insert person-myfriend">
+            <div class="media">
+              <a class="pull-right" href="#">
+                <img class="media-object img-circle" src="/images/need/person-title-list03.png">
+              </a>
+              <div class="media-body person-title-list">
+              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                <h4 class="text-info size-18">我的好友</h4>
+                <p class="text-info size-16">（10）</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!--评价-->
+    <div class="right-title per-center-title">评价</div>
+  <div class="check-page center-pj">
+  <div class="text-info size-14">综合评价：
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+  </div>
+  <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+    <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+
+    <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+  <p class="text-center index-main"><img src="/images/need/pj-more.png"></p>
+  </div>
+ </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/Chart.js"></script>
+<script src="/js/self/person-center.js" type="text/javascript"></script>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.demand', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

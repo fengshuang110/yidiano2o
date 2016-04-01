@@ -1,0 +1,130 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+</div>
+</div>
+</nav>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+	<div class="col-md-2">
+		<table class="table table-hover need-left yzj-work">
+		<tbody>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/developer/applies">我的报名<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/developer/orders">我的订单<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/developer/works">接包项目<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/developer/collect">我的收藏<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-comment pull-left icon-distance"></span><a href="/developer/recommend">我的推荐<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="#">众包任务管理<span class="pull-right"></span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span><a href="#"></a>GIT平台<span class="pull-right"></span></a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!--右侧-->
+  <div class="col-md-10 clear-both">
+    <!--内容-->
+    <div class="tab-content yzj-work-content">
+      <div role="tabpanel" class="tab-pane active" id="home">
+        <table class="table project-table project-need work-table" style="border-top:1px solid #f5f5f5">
+          <tbody>
+              <tr>
+              <td> 
+               <p class="release-title">
+                <span class="release-title-text size-14">
+                  <a href="#">PHP数据展示类型网站二次开发PHP数据展示类型</a>
+                </span>
+                <span class="title-type-quicy">急</span>
+                <span class="title-type-replace">押</span>
+                <span><img src="/images/index/index-title-icon.png"></span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">发布者：河北酷虫科技股份有奶公司 </span>
+                <span class="icon-distance">开始时间：2014-05-06</span>
+                <span class="icon-distance">截止时间：2014-05-06</span>
+              </p>
+              <p class="release-title text-info">
+                <span class="icon-distance">已有<span class="text-warning">20</span>
+                人报名
+              </span>
+              <span class="label label-default success-fill">报名中</span>
+            </p>
+
+            <p class="release-title">
+            <span class="text-info">技能要求:</span>
+              <span class="label label-default blacktext">PHP</span>
+              <span class="label label-default primary">JSP</span>
+            </p>
+          </td>
+          <td></td>
+          <td>
+           <p class="release-title text-warning project-price">￥580000</p>
+            <p class="release-title text-info">预付款：￥10,000</p>
+            <p class="release-title project-need">
+            <span class="icon-distance"><img src="/images/need/shoucang.png"></span>
+            <span class="size-18">收藏</span>
+            </p>
+          </td>
+      	  </tr>
+      	  <tr>
+		      <td colspan="3">
+		        <div class="table-line"></div>
+		      </td>
+	      </tr>
+ 		</tbody>
+	</table>
+</div>
+</div>
+<!--分页-->
+<div class="page">
+  <nav>
+    <ul class="pagination pull-right">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">上一页</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">下一页</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.developer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

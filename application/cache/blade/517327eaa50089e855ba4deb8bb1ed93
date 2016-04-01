@@ -1,0 +1,284 @@
+<?php $__env->startSection('style'); ?>
+<style>
+.menuactive{
+	padding: 10px 20px;
+    border-radius: 7px;
+    display: block;
+    color: rgb(255, 255, 255);
+    background: rgb(251, 156, 10);
+}
+</style>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+</div>
+</div>
+<?php if($resume_degree < 70): ?>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您的个人资料还没有达到接包要求
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去完善资料&gt;&gt;</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<?php endif; ?>
+<!--主体开始-->
+<div class="container clear-both need-main" ng-controller="developerController">
+
+  <div class="col-md-2">
+    <table class="table table-hover need-left size-14">
+      <thead><tr><td>我的项目<span class="pull-right">（0）</span></td></tr></thead>
+      <tbody>
+        <tr ng-class="{true: 'deleloper-menu-active', false: ''}[item.active]" ng-repeat="item in categories" ng-click="getworks(item)"><td><span class="icon-distance"><img src="/images/need/need-left-icon08.png"></span>{{item['name']}}</td></tr>
+      </tbody>
+    </table>
+  </div>
+	<div class="col-md-7 clear-left">
+   <!--发布项目-->
+   <div>
+    <!--内页轮播-->
+    <div id="carousel-example-generic" class="carousel slide need-banner" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators need-banner-icon">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="/images/need/need-banner.png" alt="云沃客">
+        </div>
+        <div class="item">
+          <img src="/images/need/need-banner.png" alt="云沃客">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--最新发布-->
+  <div>
+    <h4 class="pull-left main-title">
+      <span class="icon-distance"><img src="/images/index/index-title-icon02.png"></span>
+      最新发布
+    </h4>
+    <h6 class="pull-right more"><a href="#"><span class="aaa"></span></a></h6>
+    <!--任务表格-->
+    <table class="table project-table project-need">
+      <thead class="project-table-title">
+        <tr>
+          <td class="project-need-distance">标题/技能</td>
+          <td>发布者/时间</td>
+          <td>金额</td>
+        </tr>
+      </thead>
+      <tbody>
+          <tr ng-repeat="item in works">
+          <p class="project-table-deta">
+            <td>
+              <p class="release-title">
+                <span class="release-title-text">
+                <a href="/work/detail/{{item['id']}}">{{item['title']}}</a>
+                </span>
+                <span class="title-type-quicy">急</span>
+                <span class="title-type-replace">押</span>
+              </p>
+              <p class="release-title" >
+              <span class="muted">技能要求</span>
+              <span ng-repeat="tag in $item['tags']" class="label label-default primary blacktext">{{tag}}</span>
+              </p>
+            </td>
+            <td>
+              <p class="release-title muted release-title-time">
+               <span class="text-warning">{{item.deadline * 1000 | date:'dd-MM-yy'}}</span>截止<br/>
+               {{item['username']}}
+              </p>
+            </td>
+            <td>
+            <p class="release-title text-warning project-price">￥{{item['budget']}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--分页-->
+     
+    </div>
+  </div>
+  <!--右侧-->
+  <div class="col-md-3 clear-left">
+    <div class="right-project-btn">
+      <form class="form">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control search-input" id="exampleInputAmount" placeholder="输入关键字">
+            <div class="input-group-addon">
+            <span class="glyphicon glyphicon-search text-warning"></span>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+      <!--右侧小轮播图-->
+      <div class="right-main-content">
+        <div id="myCarousel" class="carousel slide">
+          <ol class="carousel-indicators banner2-ol">
+            <li data-target="#myCarousel" data-slide-to="1">
+              云沃客让开发更自由
+              <span class="pull-right">
+                <img src="/images/index/banner-ol-icon.png"/>
+              </span>
+            </li>
+          </ol>
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item">
+              <img src="/images/index/right-content-top.png">
+            </div>
+            <div class="item"><img src="/images/index/right-content-top.png"></div>
+          </div>
+        </div>
+
+        <!--沃客学院-->
+        <div class="right-xueyuan">
+          <p class="right-title">沃客学院</p>
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object" src="/images/index/right-news-img.png" alt="...">
+              </a>
+            </div>
+            <div class="media-body">
+              <h5 class="media-heading">十大终极黑客入...</h5>
+              <span class="muted">当代码让科幻成为现实，是否
+                能让你重新...</span>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object" src="/images/index/right-news-img.png" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h5 class="media-heading">十大终极黑客入...</h5>
+                <span class="muted">当代码让科幻成为现实，是否
+                  能让你重新...</span>
+                </div>
+              </div>
+            </div>
+            <!--排行榜-->
+            <div class="right-xueyuan">
+              <p class="right-title">排行榜</p>
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs paihang-title" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">任务金额</a></li>
+                <li role="presentation paihang-title"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">任务人气</a></li>
+                <li role="presentation paihang-title"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">任务收入</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                  <table class="table table-hover paihang-table">
+                    <thead>
+                      <tr>
+                        <td>排行榜</td>
+                        <td>任务名称</td>
+                        <td>金额</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="paihang-num num001">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="paihang-num num002">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="paihang-num num003">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="paihang-num num004">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="paihang-num num004">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="paihang-num num004">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="paihang-num num004">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="paihang-num num004">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="paihang-num num004">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                      <tr>
+                        <td><span class="paihang-num num004">1</span></td>
+                        <td><span class="muted">PHP数据展二...</span></td>
+                        <td><span class="text-warning">￥580000</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                <div role="tabpanel" class="tab-pane" id="messages">...</div>
+              </div>
+            </div>
+
+            <!--通告公告-->
+            <div class="right-xueyuan">
+              <p class="right-title">通知公告</p>
+              <ul class="list-group">
+                <li class="gonggao"><a href="#">程序员资源开放专区即将上线</a></li>
+                <li class="gonggao"><a href="#">云沃客官方网站正式上线</a></li>
+                <li class="gonggao"><a href="#">连接需求者和开发者的桥梁</a></li>
+                <li class="gonggao"><a href="#">如何快速学习PHP</a></li>
+                <li class="gonggao"><a href="#">程序员资源开放专区即将上线</a></li>
+                <li class="gonggao"><a href="#">连接需求者和开发者的桥梁</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<script type="text/javascript" src="/js/frontend/developer.js"></script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.developer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

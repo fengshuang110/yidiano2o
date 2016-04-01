@@ -1,0 +1,174 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">身份认证</span></a></div>
+</div>
+</div>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+ <div class="col-md-2">
+		<table class="table table-hover need-left size-14">
+			<thead><tr><td class="text-center">需求者中心</td></tr></thead>
+			<tbody>
+			<tr><td>
+         <a href="/company/profile"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>个人中心
+      	 </a></td></tr>
+				<tr> <td>
+        <a href="/company/settings" ><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>
+        密码设置</a>
+        </td></tr>
+				<tr><td>
+          <a href="/company/contacts" ><span class="glyphicon glyphicon-user pull-left icon-distance"></span>
+        人脉</a></td></tr>
+				<tr><td>
+          <a href="/company/evaluation" ><span class="glyphicon glyphicon-comment pull-left icon-distance"></span>
+        评价</a></td></tr>
+				<tr><td>
+          <a href="/company/verify" ><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span>
+        身份认证</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+
+  <!--右侧-->
+  <div class="col-md-10 check-page">
+    <h4 class="check-title">身份认证</h4>
+	<?php if(empty($authentication) || $authentication['status'] == 2): ?>
+    <ul class="nav nav-pills container" role="tablist">
+      <li role="presentation" class="col-md-2 col-md-offset-2 text-center active ">
+        <a href="#home" aria-controls="home" role="tab" data-toggle="tab">企业认证</a>
+      </li>
+      <li role="presentation" class="col-md-2 text-center">
+        <a href="#people" aria-controls="profile" role="tab" data-toggle="tab">个人认证</a>
+      </li>
+    </ul>
+    <p>&nbsp;</p>
+    <div class="tab-content">
+      <!--企业档案 表单开始-->
+      <div role="tabpanel" class="tab-pane active" id="home">
+        <form id="company-form" method="post" action="/company/verify" enctype="multipart/form-data">
+          <div class="form-horizontal">
+          <input type="hidden" name="type" value="1" />
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-3 control-label">企业名称 :</label>
+              <div class="col-sm-6">
+                <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">联系方式 :</label>
+              <div class="col-sm-6">
+                <input type="text" name="phone" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">营业执照扫描件 :</label>
+              <div class="col-sm-3">
+                <input type="file" name="business_license_scan" id="inputEmail3" placeholder="" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">组织机构代码扫描件 :</label>
+              <div class="col-sm-3">
+                <input type="file" name="organization_code_scan" id="inputEmail3" placeholder="" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-6 col-md-offset-3 text-center">
+                <p>&nbsp;</p>
+                <button type="submit" class="btn btn-lg btn-primary btn-width140 icon-distance">确定</button>  
+                <p>&nbsp;</p>
+              </div>
+            </div></div>
+          </form>
+        </div>
+        <!--企业档案 结束-->
+        <!--个人档案 开始-->
+        <div role="tabpanel" class="tab-pane" id="people">
+          <form id="personal-form" method="post" enctype="multipart/form-data">
+            <div class="form-horizontal">
+            <input type="hidden" name="type" value="0" />
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">真实姓名 :</label>
+                <div class="col-sm-6">
+                  <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-3 control-label">身份证正面 :</label>
+                <div class="col-sm-3">
+                  <input type="file" name="positive_identity_card" id="inputEmail3" placeholder="" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-3 control-label">身份证背面 :</label>
+                <div class="col-sm-3"> 
+                  <input type="file" name="back_identity_card" id="inputEmail3" placeholder="" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                  <p>&nbsp;</p>
+                  <button type="submit" class="btn btn-lg btn-primary btn-width140 icon-distance">确定</button>  
+                  <p>&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--个人档案 结束-->
+      </div>
+       <?php elseif($authentication['status'] == 0): ?>
+		<div class="alert alert-warning size-14" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">info:</span>
+           	 身份认证<strong>正在审核</strong>，需要1-2个工作日，请耐心等待。
+          </div>
+        <?php elseif($authentication['status'] == 2): ?>
+        <div class="alert alert-danger size-14" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+           	 对不起！您提交的认证信息<strong>未通过审核</strong>。<br>提示：上传图片错误。
+          </div>
+        <?php elseif($authentication['status'] == 1): ?>
+        <div class="alert alert-success alert-dismissible size-14" role="alert">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            <span class="sr-only">success:</span>
+           	 您已经<strong>成功通过审核</strong>，立即去<a href="/demand/work/publish" class="alert-link">发布任务</a>吧。
+          </div>
+      	<?php endif; ?>
+    </div>
+  </div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<script src="/js/bootstrapValidator.js"></script>
+<script src="/js/frontend/verify.js"></script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.demand', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

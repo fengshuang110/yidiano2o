@@ -1,0 +1,61 @@
+<?php $__env->startSection('style'); ?>
+<link href="/css/user.css" rel="stylesheet">
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+
+<div class="container k-signup J-k-signup">
+<div class="row">
+<div class="col-md-6 col-md-push-3">
+	<form  class="k-form-signup"  method="post" data-form="signupstart">	
+	<h4 class="text-center">选择身份</h4>
+	<div class="form-group">
+		<div class="signupList clearfix">
+			<div class=" col-xs-6"><i>1</i>填写账户信息</div>
+			<div class="normal col-xs-6"><i>2</i>注册成功</div>
+		</div>
+	</div>
+
+	<div class="form-group ">
+		<div class="col-xs-6 col-md-4 col-md-offset-2">
+			<div class="thumbnail caption text-center choose">
+            <h3>需求者</h3>
+            <p>我想发项目<br>找程序大牛开发</p>
+			<span class="glyphicon glyphicon-ok icon"></span>
+			</div>
+		</div>
+
+		<div class="col-xs-6 col-md-4">
+		  <div class="thumbnail caption text-center choose ">
+            <h3 >开发者</h3>
+            <p>我是工程师<br>
+			  想接项目赚钱</p>
+			<span class="glyphicon glyphicon-ok icon" ></span>
+			</div>
+		 </div>
+	</div>
+
+	<div class="form-group btnBox">
+		<div class="col-md-4 col-md-push-4"><a id="register" href="/home/index" class="btn btn-primary btn-block btn-lg">下一步</a></div>
+	</div>
+	
+	</form>		
+</div>
+</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/bootstrapValidator.js"></script>
+<script src="/js/frontend/user.js"></script>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,70 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+
+<div class="dinner need-nav-second">
+  	<div class="container">
+  		<div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">订单</span></a></div>
+  	</div>
+  </div>
+</nav>
+<!--主体开始-->
+<div class="container need-main"><!--右侧-->
+    <!--项目经验 开始-->
+    <div class="col-md-12 check-page">
+      <div class="col-md-12 clear-left size-24 margin15-top">
+       收款方 ： 北京云族佳科技有限公司
+     </div>
+     <hr class="col-md-12 clear-both">
+     <h4 class="margin15-top">托管项目预付款</h4>
+     <table class="table table-bordered margin15-top text-center">
+          <thead class="project-table-title">
+            <tr>
+              <th>支付单号</th>
+              <th>项目名称</th>
+              <th>项目类型</th>
+              <th>项目预算(元)</th>
+              <th>开发周期(天)</th>
+              <th>已托管金额(元)</th>
+              <th>本次需预托管(元)</th>
+            </tr>
+       </thead>
+          <tbody>
+            <tr>
+              <td class="text-gray size-14 text-left"><?php echo $payinfo['trans_no']; ?></td>
+              <td class="text-gray size-14 text-left"><?php echo $work['title']; ?></td>
+              <td class="text-gray size-14"><?php echo $work['category_name']; ?></td>
+              <td class="text-gray size-14"><?php echo $work['budget']; ?></td>
+              <td class="text-gray size-18"><?php echo $work['target_time']; ?></td>
+              <td class="text-gray size-18"><?php echo $work['advance']; ?> </td>
+              <td class="text-gray size-18"><?php echo $payinfo['amount']; ?> </td>
+            </tr>
+          </tbody>
+      </table>
+      <div class="col-md-12 need-title-size60 clear-both text-right"><span class="size-14">需求支付：</span><span class="size-24 text-warning">￥ <?php echo $payinfo['amount']; ?></span>
+      </div>
+      <div class="col-md-12 text-right margin15-top clear-both">
+        <a href="/paymanager/alipayhand?order_id=<?php echo $payinfo['trans_no']; ?>&type=1" class="btn btn-lg btn-primary btn-width140">去支付</a>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+ 
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/bootstrapValidator.js"></script>
+<script src="/js/frontend/home.js"></script>
+<script src="/js/frontend/user.js"></script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.demand', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

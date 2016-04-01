@@ -1,0 +1,236 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+ 
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+</div>
+</div>
+<div class="container text-info">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main">
+	<div class="col-md-2">
+		<table class="table table-hover need-left size-14">
+			<thead><tr><td> 开发者中心</td></tr></thead>
+			<tbody>
+			<tr><td>
+         <a href="/user/profile"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>个人中心
+      	 </a></td></tr>
+				<tr><td>
+         <a href="/user/settings"><span class="glyphicon glyphicon-cog pull-left icon-distance"></span>账号安全
+      	 </a></td></tr>
+        	<tr><td>
+          <a href="/user/resume"><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span>
+        	个人简历
+         </a></td></tr>
+         
+		<tr><td>
+           <a href="/user/contacts"><span class="glyphicon glyphicon-user pull-left icon-distance"></span>
+        人脉</a></td></tr>
+				<tr><td>
+           <a href="/user/evaluation"><span class="glyphicon glyphicon-comment pull-left icon-distance"></span>
+        评价</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+  <!--右侧-->
+  <div class="col-md-10 clear-both">
+  <!--个人资料-->
+      <div class="check-page person-center">
+        <a href="/user/editprofile"><img class="kaifa-ziliao-pen2" src="/images/need/kaifa-ziliao-pen.png" width="30" height="30"></a>
+        <div class="col-md-3 clear-left">
+          <div class="col-md-12 center-tx clear-both">
+            <div class="col-md-3"></div>
+          <div class="col-md-6 text-center">
+            <img class="img-circle" src="/images/index/default-img.png" width="60px" height="60px"/>
+            <span class="need-addv"><img src="/images/need/need-V.png"></span>
+            <p class="center-label project-need">更改头像</p>
+          </div>
+          <div class="col-md-3"></div>
+          </div>
+          <div class="col-md-12 center-lv clear-both">
+            <!--进度条-->
+            <p class="pull-left icon-distance col-m2 text-warning size-14" style="font-weight: bold">LV5</p>
+             <div class="progress col-md-6 clear-both pull-left icon-distance">
+              <div class="progress-bar pull-left" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <span class="sr-only">60% Complete</span>
+              </div>
+            </div>
+            <p class="pull-left col-md-2 clear-both">
+              <span class="text-warning">80/</span><span>100</span>
+            </p>
+            <div class="clearfix"></div>
+            <div class="size-14 project-need">
+            勋章：<img src="/images/need/person-xz-icon.png">
+            <span class="text-warning">(黄金徽记)</span>
+            </div>
+            <div class="size-14 project-need">
+              身份认证：已认证
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 person-detail size-14">
+          <div class="col-md-12 clear-both">
+              <div class="col-md-4 clear-left">姓名：<?php echo $profile['name']; ?><?php if($profile['sex'] == 1): ?> (女)<?php else: ?><?php endif; ?></div>
+              <div class="col-md-4">邮箱： <?php echo $profile['email']; ?></div>
+             
+          </div>
+          <div class="top-distance30 col-md-12 clear-both">
+              <div class="col-md-4 clear-left">目前所在：<?php echo $profile['location']; ?></div>
+              <div class="col-md-4">出生日期： <?php echo $profile['birthday']; ?></div>
+            
+          </div>
+          <div class="top-distance30 col-md-12 clear-both">
+             <div class="col-md-4 clear-left">电话:<?php echo $session_user['phone']; ?></div>
+             <div class="col-md-4">工作经验:<?php echo $profile['work_year']; ?></div>
+          </div>
+          <div class="top-distance30 col-md-12 clear-both">
+             <div class="col-md-4 clear-left">职位：<?php echo $profile['position']; ?></div>
+             <div class="col-md-4">擅长技能：
+            	<?php foreach($profile['tags'] as $tag): ?>
+	           	 <span class="label label-default blacktext"><?php echo $tag; ?></span>
+	            <?php endforeach; ?>
+	           </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="top-distance30">
+            自我介绍：<br/><br/>
+            <span class="person-js">
+            	<?php echo $profile['intro']; ?>
+
+            </span>
+          </div>
+        </div>
+      </div>
+  <!--交易记录-->
+      <div class="right-title per-center-title">交易记录
+        <p class="pull-right size-14">
+      <a href="#">
+        我的沃客平台>>
+      </a>
+        </p>
+      </div>
+      <div class="check-page person-center center-pj" >
+        <div class="col-md-6" id="canvas-holder">
+            <canvas id="chart-area" width="218" height="218"/>
+        </div>
+        <div class="col-md-6">
+          <canvas id="canvas" height="250" width="390"></canvas>
+        </div>
+      </div>
+  <!--人脉-->
+  <div class="right-title per-center-title">人脉</div>
+  <div class="check-page person-number-count">
+      <div class="col-md-4 active">
+        <div class="person-number person-success">
+          <div class="person-number-insert person-success">
+            <div class="media">
+              <a class="pull-right" href="#">
+                <img class="media-object img-circle" src="/images/need/person-title-list.png">
+              </a>
+              <div class="media-body person-title-list">
+              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                <h4 class="text-info size-18">成功交易人数</h4>
+                <p class="text-info size-16">（10）</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 active">
+        <div class="person-number person-baoming">
+          <div class="person-number-insert person-baoming">
+            <div class="media">
+              <a class="pull-right" href="#">
+                <img class="media-object img-circle" src="/images/need/person-title-list02.png">
+              </a>
+              <div class="media-body person-title-list">
+              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                <h4 class="text-info size-18">报名人数</h4>
+                <p class="text-info size-16">（10）</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 active">
+        <div class="person-number person-myfriend">
+          <div class="person-number-insert person-myfriend">
+            <div class="media">
+              <a class="pull-right" href="#">
+                <img class="media-object img-circle" src="/images/need/person-title-list03.png">
+              </a>
+              <div class="media-body person-title-list">
+              <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                <h4 class="text-info size-18">我的好友</h4>
+                <p class="text-info size-16">（10）</p>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!--评价-->
+    <div class="right-title per-center-title">评价</div>
+  <div class="check-page center-pj">
+  <div class="text-info size-14">综合评价：
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-yellow.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+    <span class="icon-distance"><img src="/images/need/pj-icon-gray.png"></span>
+  </div>
+  <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+    <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+
+    <div class="check-page-gray">
+    <span>江同飞 ： 这家商户信用度比较高， 沟通时很愉快 ， 期待下次有机会继续合作
+    </span>
+    <span class="pull-right">2015-08-01</span>
+  </div>
+  <p class="text-center index-main"><img src="/images/need/pj-more.png"></p>
+  </div>
+ </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<script src="/js/Chart.js"></script>
+<script src="/js/frontend/person-center.js"></script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.developer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

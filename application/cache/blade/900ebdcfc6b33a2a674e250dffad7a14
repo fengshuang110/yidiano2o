@@ -1,0 +1,187 @@
+<html ng-app="app">
+<head>
+<meta charset="UTF-8">
+   <title><?php if(!empty($title)): ?>
+    			<?php echo $title; ?>
+
+    	   <?php else: ?> 
+    	   		主页
+    	   <?php endif; ?>
+    </title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="/css/nav.css" rel="stylesheet" type="text/css" />
+    <link href="/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+      <?php echo $__env->yieldContent('style'); ?>  
+</head>
+<body <?php echo $__env->yieldContent('angular'); ?>>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/home/index"><img src="/images/index/logo.png"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+         <li><a href="/user/profile"><img src="/images/need/person-center-icon.png">&nbsp;&nbsp;个人中心</a></li>
+         <li><a href="#"><img src="/images/need/message-icon.png" height="13" width="17">&nbsp;&nbsp;消息<span>(3)</span></a></li>
+         <li role="presentation" class="dropdown">
+           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            		开发者
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+          		<li><a href="/demand/index">切换需求者</a></li>
+          </ul>
+        </li>
+        <li class="nav-news">
+          <a href="#"><span><?php echo $session_user['username']; ?></span></a>
+          <span class="nav-image">
+            <a href="#">
+              <img class="img-circle nav-img" src="/images/index/default-img.png" height="45" width="45">
+              <span class="img-circle nav-img-online"></span>
+            </a>
+          </span>
+        </li>
+        <li><a href="/home/logout">退出</a></li>
+
+      </ul>
+    </div>
+  </div>
+  <!--需求者一级导航-->
+ <div class="dinner need-nav">
+    <div class="container">
+      <ul class="nav needer pull-left">
+       <li><a href="/developer/index">首页</a></li>
+       <li><a href="/developer/works">沃克平台</a></li>
+       <li><a href="/account/index">沃克钱包</a></li>
+     </ul>
+     <ul class="nav needer pull-right">
+      <li><a href="/community/index">社区</a></li>
+      <span class="resume-line">|</span>
+      <li><a href="/home/help">新手入门</a></li>
+    </ul>
+  </div>
+</div>
+
+<!--body wrapper start-->
+<div >
+      <?php echo $__env->yieldContent('content'); ?>
+</div>
+
+ <!--底部开始-->
+  <div class="inner footer">
+    <div class="container">
+      <div class="row regin-step">
+        <ul>
+          <li class="col-md-3">
+            <div class="media">
+              <div class="media-left media-middle footer-icon-distance">
+                <span class="media-object img-circle regin-step-icon">
+                  <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image51','','images/index/foot-icon001.png',1)"><img src="/images/index/foot-icon01.png" name="Image51" width="38" height="38" border="0"></a>
+                </span>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading regin-step-title">专业高手接单</h4>
+                <span class="regin-step-detail">众包任务高质量完成</span>
+              </div>
+            </div>
+          </li>
+          <li class="col-md-3">
+            <div class="media">
+              <div class="media-left media-middle footer-icon-distance">
+                <span class="media-object img-circle regin-step-icon">
+                  <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image52','','images/index/foot-icon02.png',1)"><img src="/images/index/foot-icon002.png" name="Image52" width="22" height="37" border="0"></a>
+                </span>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading regin-step-title">代码远程共享交付</h4>
+                <span class="regin-step-detail">随时随地自由云工作</span>
+              </div>
+            </div>
+          </li>
+          <li class="col-md-3">
+            <div class="media">
+              <div class="media-left media-middle footer-icon-distance">
+                <span class="media-object img-circle regin-step-icon">
+                  <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image53','','images/index/foot-icon003.png',1)"><img src="/images/index/foot-icon03.png" name="Image53" width="38" height="34" border="0"></a>
+                </span>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading regin-step-title">第三方咨询与监理</h4>
+                <span class="regin-step-detail">免除结算时后顾之忧</span>
+              </div>
+            </div>
+          </li>
+          <li class="col-md-3">
+            <div class="media">
+              <div class="media-left media-middle footer-icon-distance">
+                <span class="media-object img-circle regin-step-icon">
+                 <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image54','','images/index/foot-icon004.png',1)"><img src="/images/index/foot-icon04.png" name="Image54" width="36" height="35" border="0">
+                 </a>
+               </span>
+             </div>
+             <div class="media-body">
+              <h4 class="media-heading regin-step-title">客服无缝对接</h4>
+              <span class="regin-step-detail">专业的软件众包服务体系</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-detail">
+      <div class="row">
+        <div class="footer-detail-left pull-left col-md-5">
+          <ul>
+            <li>
+              <p class="footer-detail-title">公司信息</p>
+              <p><a href="#">关于我们</a></p>
+              <p><a href="#">联系我们</a></p>
+              <p><a href="#">常见问题</a></p>
+              <p><a href="#">用户协议</a></p>
+              <p><a href="#">人才招聘</a></p>
+            </li>
+            <li>
+              <p class="footer-detail-title">发现</p>
+              <p><a href="#">APP下载</a></p>
+              <p><a href="#">沃客学院</a></p>
+            </li>
+            <li>
+              <p class="footer-detail-title">众包任务</p>
+              <p><a href="#">什么是众包</a></p>
+              <p><a href="#">如何发包</a></p>
+              <p><a href="#">如何接包</a></p>
+              <p><a href="#">如何处理纠纷</a></p>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-detail-left pull-right col-md-7">
+          互联网出版许可证 京ICP备13050812号 | 网络文化经营许可证 京网文［2014］0093-043<br/>号 | 电子与信息服务业务经营许可证 京ICP证140251号 | 京公网安备11030102000572号 | <br/>互联网药品信息服务资格证书 (京)非经营性-2014-0064
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="inner foot-banquan">
+  <div class="container">Copyright© 2015 云族佳版权所有</div>
+</div>
+  <?php echo $__env->yieldContent('modal'); ?>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/footer-replaceimg.js"></script>
+<script src="/js/angular.min.js"></script>
+ <?php echo $__env->yieldContent('script'); ?>   
+</body>
+</html>
+
+
+

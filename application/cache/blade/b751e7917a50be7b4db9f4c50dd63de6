@@ -1,0 +1,293 @@
+<?php $__env->startSection('style'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('angular'); ?>
+	ng-controller="workController"
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+ <div class="container">
+  <div class="pull-right text-info text-distance">当前位置：我是开发者>WOKE平台><a href="#"><span class="text-warning">我的订单</span></a></div>
+</div>
+</div>
+<div class="container">
+	<p class="col-md-12  top-indent size-14">
+    <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+    您尚未完成认证，会影响您发布项目，立即认证可获得
+    <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+    <a href="#"><span class="text-warning">立即去认证》</span></a>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  </p>
+</div>
+<!--主体开始-->
+<div class="container clear-left need-main" >
+   <div class="col-md-2">
+		<table class="table table-hover need-left yzj-work">
+		<tbody>
+		<tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/demand/index">需求者首页</a></td></tr>
+        <tr class="demand-menu-active"><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="/demand/works">我的项目<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-cog pull-left icon-distance"></span><a href="/demand/orders">我发包订单<span class="pull-right">(10)</span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-folder-open pull-left icon-distance"></span><a href="#">众包任务管理<span class="pull-right"></span></a></td></tr>
+        <tr><td><span class="glyphicon glyphicon-list-alt pull-left icon-distance"></span><a href="#"></a>GIT平台<span class="pull-right"></span></a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-10">
+    <h4 style="font-weight: bold;">我的项目状态</h4>
+   <div class="need-centerline">              
+    <table class="table liucheng2-table">
+      <tr>
+        <td width="25%">
+          <div class="liucheng2-hr"></div>    
+          <p class="liucheng2-text">01  报名选标</p>
+          <p class="liucheng2-icon nav-image">
+            <img src="/images/need/need-step-01-open.png">
+          </p>     
+        </td>
+        <td width="25%">
+          <div class="liucheng2-hr"></div>    
+          <p class="liucheng2-text">02  开发交付</p>
+          <p class="liucheng2-icon nav-image">
+            <img src="/images/need/need-step-02-open.png">
+          </p>            
+        </td>
+        <td width="25%">
+          <div class="liucheng2-hr"></div>    
+          <p class="liucheng2-text">03  项目验收</p>
+          <p class="liucheng2-icon nav-image">
+            <img src="/images/need/need-step-03-open.png">
+          </p>             
+        </td>
+        <td width="25%">
+          <p class="liucheng2-text">04  评价</p>
+          <p class="liucheng2-icon nav-image">
+            <img src="/images/need/need-step-04-open.png">
+          </p>                   
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="panel panel-default need-main">
+    <div class="panel-body">
+      <div class="row ">
+        <div class="col-sm-9">
+          <p class="release-title">
+            <span class="size-18">PHP数据展示类型网站二次开发PHP数据展示类型 </span>
+            <span class="title-type-quicy">急</span>
+          </p>
+          <p class="release-title text-info">
+            <span class="icon-distance">发布时间:2015-11-06</span>
+            <span class="icon-distance">截止日期:2015-12-12</span>
+            <span>已有<span class="text-warning">10</span>人报名</span>
+            </p>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-sm-2">
+            <p class="release-title text-info">状态：待选标</p>
+            <p class="release-title"><span class="label label-default success-fill">咨询</span></p>
+          </div>
+
+        </div>
+        <hr>
+        <!--三块区域-->
+        <div class="need-main" style="overflow: hidden;">
+          <div class="col-md-4 active">
+            <div class="person-number text-center">
+              <div class="person-number-insert">
+                <p class="size-18">已托管预付款</p>
+                <p class="size-18 text-warning need-main">￥10,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 active">
+            <div class="person-number text-center">
+              <div class="person-number-insert">
+                <p class="size-18">待托管尾款</p>
+                <p class="size-18 text-warning need-main">￥20,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 active">
+            <div class="person-number text-center">
+              <div class="person-number-insert">
+                <p class="size-18">项目成交金额</p>
+                <p class="size-18 text-warning need-main">￥80,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-group need-main" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default xmxq">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title text-right">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <span class="btn btn-default btn-radius100">
+                    展开&nbsp;&nbsp;<span class="caret"></span>
+                  </span>
+                </a>
+              </h4>
+            </div>
+            <hr class="order-line" />
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <p class="size-18">需求详情</p>
+                <p class="release-title">项目类型：WEB应用开发</p>
+                <p class="release-title">技术要求：
+                <span class="label label-default blacktext">PHP</span>
+                <span class="label label-default primary">JSP</span>
+                </p>
+                <p class="text-info help-content">
+                  1.功能需求<br/>
+                  Web端与APP将通过JSON接口进行对接。<br/>
+                  基本功能包括但不限于以下功能<br/>
+                  2.开发者工作职责<br/>
+                  Web端与APP将通过JSON接口进行对接。<br/>
+                  基本功能包括但不限于以下功能<br/>
+                  3.工作成果交付需求<br/>
+                  一附件形式交付<br/>
+                  4.知识产权声明<br/>
+                  未侵犯他人的著作权。如有侵犯他人著作权，<br/>
+                  由设计者承担所有法律责任。<br/>
+                </p>
+                <p class="top-distance30">
+                  <button class="btn btn-info">
+                    <img src="/images/need/form-btn-icon02.png" class="icon-distance">
+                    下载附件</button>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="">
+            <div class="pull-left">
+              <button class="btn btn-primary">支付尾款</button>
+              <button class="btn btn-disabled">取消项目</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<!-- Modal 1 默认尺寸-->
+<div class="modal fade" id="acceptance-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-warning" id="myModalLabel">项目验收</h4>
+      </div>
+        <div class="modal-body text-center">
+         <form class="form-horizontal">
+			<input type="hidden" ng-model="acceptance.work_id" name="work_id" value="{{acceptance.work_id}}">
+            <div class="form-group">
+              <label class="col-sm-3 control-label clear-right">附件：</label>
+              <div class="col-sm-6 clear-left">
+                <lable type="text" class="form-control" >php.rar</lable>
+              </div>
+              <div class="col-sm-3 clear-left">
+                <button class="btn btn-info btn-block"><img class="icon-distance" src="/images/need/need-btn-icon01.png">下载附件</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label clear-right">沃客Git平台：</label>
+              <div class="col-sm-9 clear-left">
+                <select class="form-control">
+                <option>github</option>
+                <option>gitlab</option>
+                </select>
+              </div>
+            </div>
+             <div class="form-group">
+				<label class="col-sm-3 control-label">校验码：</label>
+				<div class="col-sm-6 clear-left">
+					<input type="text" class="form-control" name="vcode" placeholder="请输入校验码">					
+				</div>
+				<div class="col-sm-3 clear-left"><button class="btn btn-block btn-primary messageCode" type="button" >获取短信校验码</button>
+				</div>
+			</div>
+            <div class="form-group">
+             <label class="col-sm-3 control-label clear-left">选择</label>
+	          <div class="col-sm-9">
+		            <label class="radio-inline col-sm-4 clear-left">
+					  <input  type="radio" ng-model="acceptance.agree" name="agree" value="1">验收通过
+					</label>
+					<label class="radio-inline col-sm-4 clear-left" >
+					  <input  type="radio" ng-model="acceptance.agree"  name="agree"  value="0">验收不通过
+					</label>
+				</div>
+			</div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label clear-right">验收信息：</label>
+              <div class="col-sm-9 clear-left">
+                <textarea ng-model="acceptance.intro" class="form-control" rows="4" placeholder="请对开发者说下原因吧，可以提高开发质量"></textarea>
+              </div>
+            </div>
+			</form>
+        </div>	
+        <div class="modal-footer">
+		    <button ng-click="finished(acceptance);" class="btn btn-lg btn-primary btn-width140">提交验收结果</button>
+		</div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 默认尺寸-->
+<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-2-header">
+        <button onclick="location.href=location.href;" class="btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-2-title text-success" id="myModalLabel">提交验收操作成功</h4>
+      </div>
+        <div class="modal-2-body text-center">
+          <span id="message" class="size-16 text-muted">项目提交成功，等待耐心需求者审核！联系需求者</span>
+        </div>	
+      <div class="modal-2-footer">
+       <a href="/demand/works" class="btn btn-success btn-lg btn-width140">返回我项目</a>
+      </div>
+        
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 2 默认尺寸-->
+<div class="modal fade" id="failed-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-2-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-2-title text-danger" id="myModalLabel">提 示</h4>
+      </div>
+        <div class="modal-2-body text-center">
+          <span id="message" class="size-16 text-muted"></span>
+        </div>	
+      <div class="modal-2-footer">
+       <a href="/demand/works" class="btn btn-danger btn-lg btn-width140">返回我项目</a>
+      </div>
+        
+    </div>
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.demand', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

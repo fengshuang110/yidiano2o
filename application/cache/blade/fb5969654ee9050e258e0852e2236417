@@ -1,0 +1,103 @@
+<?php $__env->startSection('style'); ?>
+<link href="/css/user.css" rel="stylesheet">
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+<div class="container x-login main-content">
+<div class="row">
+<div class="col-md-6 col-md-push-3 x-form-login" style="padding: 0;">
+
+	<form id="login-form"  method="post" role="form">
+		<h3 class="text-center">欢迎登录</h3>
+		<div class="col-md-6 col-md-push-3">
+
+		 <div class="form-group">
+			<div>
+				<input type="text" class="form-control" name="username" placeholder="请输入用户名/手机号/邮箱" />
+			</div>
+		</div>
+		<div class="form-group">
+			<div>
+				<input type="password" class="form-control" name="password" placeholder="请输入密码"/>
+			</div>
+		</div>
+						
+				
+		<div class="form-group field-loginform-rememberme">
+			<div class="checkbox">
+			<label for="loginform-rememberme">
+			<input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked="">
+			30天内免登录
+			</label>
+			<p class="help-block help-block-error"></p>
+			
+			</div>
+		</div>	
+		
+		<div class="row">
+		<div class="form-group">
+			<div class="col-md-7 checkbox"><button type="submit" class="btn btn-primary">登 录</button>
+			<a href="/home/register" class="btn btn btn-default">注 册</a>
+			</div>
+			<div class="col-md-5 pull-right"><a class="forgot" href="/home/forgotpwd">忘记密码？</a></div>
+		</div>
+		</div>
+	 </div>
+    </form>	
+</div>
+</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<!-- Modal 1-->
+<div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+   <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">用户登录</h4>
+      </div>
+      <!-- 主体-->
+      <div class="modal-body">
+         <form id="login-form"  method="post" role="form">
+		 <div class="form-group">
+				<input type="text" class="form-control" name="username" placeholder="请输入用户名/手机号/邮箱" />
+		</div>
+		<div class="form-group">
+				<input type="password" class="form-control" name="password" placeholder="请输入密码"/>
+		</div>
+		<div class="form-group field-loginform-rememberme">
+			<div class="checkbox">
+			<label for="loginform-rememberme">
+			<input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked="">
+			30天内免登录 </label><p class="pull-right"><a href="#">忘记密码？</a></p>  
+            </div>	
+        </div>			
+	   </form>
+	 </div>	
+     <!-- 主体结束-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-lg btn-block">保 存</button><br>
+        没有云族佳账号？<a href="#" class="text-warning">点此注册</a></div>
+    </div>
+   </div>
+  </div>
+</div>
+<!-- Modal 1结束-->
+
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="/js/bootstrapValidator.js"></script>
+<script src="/js/frontend/user.js"></script>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,130 @@
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<!--需求者二级导航-->
+<div class="dinner need-nav-second">
+    <div class="container">
+        <div class="pull-right text-info text-distance">当前位置：我是需求者><a href="#"><span class="text-warning">首页</span></a></div>
+    </div>
+</div>
+
+<div class="container">
+    <p class="col-md-12  top-indent size-14">
+        <span class="icon-distance"><img src="/images/need/need-title-icon.png"></span>
+        您尚未完成认证，会影响您发布项目，立即认证可获得
+        <span class="text-warning">50</span>元红包&nbsp;&nbsp;
+        <a href="#"><span class="text-warning">立即去认证》</span></a>
+        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </p>
+</div>
+<!--主体开始-->
+<div class="container need-main">
+    <!--现金流水记录-->
+    <div class="right-title main-title margin15-top">托管流水记录</div>
+    <div class="check-page person-center center-pj need-main">
+        <div class="pull-right">
+            <ul class="nav nav-tabs running-record size-16" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">我的托管</a></li>
+                 <li ><a href="/account/transaction?type=1" >收入支出</a></li>
+                 <li><a href="/account/transaction?type=2">我的提现</a></li>
+               
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <!--流水单号内容-->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <table class="table table-bordered top-distance30 text-center money-table ">
+                    <thead class="project-table-title">
+                        <tr>
+                            <td>序号</td>
+                            <td>流水单号</td>
+                            <td>项目名称</td>
+                            <td>托管金额</td>
+                            <td>支付状态</td>
+                            <td>日期</td>
+                            <td>说明</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <?php foreach($records as $key => $item): ?>
+                        <tr>
+                            <td class="text-gray size-14">
+                                <?php echo $key+1; ?>
+
+                            </td>
+                            <td class="text-gray size-14">
+                                <?php echo $item['trans_no']; ?>
+
+                            </td>
+                            <td class="text-gray size-14">
+                                	<?php echo $item['title']; ?>
+
+                            </td>
+                            <td class="text-gray size-14">
+                                <?php if($item['type'] == 1): ?> 
+                                	+<?php echo $item['amount']; ?>
+
+                                <?php endif; ?>
+                                <?php if($item['type'] == 2): ?> 
+                                	+<?php echo $item['amount']; ?>
+
+                                <?php endif; ?>
+                                <?php if($item['type'] == 3): ?> 
+                                	-<?php echo $item['amount']; ?>
+
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                               <?php if($item['status'] == 1): ?> 
+                                	支付成功
+                               <?php endif; ?>
+                               <?php if($item['status'] == 0): ?> 
+                                	支付失败
+                               <?php endif; ?>
+                            </td>
+                            <td>
+                               <?php if($item['status'] == 1): ?> 
+                                	<?php echo date('Y-m-d',$item['pay_time']); ?>
+
+                               <?php endif; ?>
+                            </td>
+                             <td>
+                               <?php if($item['type'] == 1): ?> 
+                                	预付款托管
+                               <?php endif; ?>
+                                <?php if($item['type'] == 2): ?> 
+                                	余款托管
+                               <?php endif; ?>
+                                <?php if($item['type'] == 3): ?> 
+                                	项目完成支出
+                               <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+               	<!--分页-->
+			      <div class="pull-right">
+			         <?php echo $__env->make('layout.paginator', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+			      </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('modal'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<!-- js 加载区域  -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.account', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
