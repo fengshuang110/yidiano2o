@@ -194,9 +194,9 @@ footer{
 	margin:20% auto;
 }
 .cart-total{
-	margin-top:20px;
+	position:fixed;
+	bottom:0px;
 	border-top:1px solid #ddd;
-	border-bottom:1px solid #ddd;
 }
 .cart-total div{
 	margin-top:10px;
