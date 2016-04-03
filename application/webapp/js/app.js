@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ngRoute'])
 
-domain = "http://api.yidiano2o.com/";
+domain = "http://121.196.194.117:8081/";
 var wait=60;
 app.factory('YWORK',function(){
 	
@@ -424,11 +424,11 @@ function($scope,$rootScope,$location,UserService,OrderService){
 	});
 	$scope.create = function(){
 		if($scope.payment_id != 0){
-			YWORK.alert('由于商户号未申请，暂不支持在线支付')
+			YWORK.err_alert('由于商户号未申请，暂不支持在线支付')
 			return;
 		}
 		if(!$scope.address.id){
-			YWORK.alert('选择/添加收货地址信息')
+			YWORK.err_alert('选择/添加收货地址信息')
 			return;
 		}
 		data = {
@@ -444,7 +444,7 @@ function($scope,$rootScope,$location,UserService,OrderService){
 					$scope.$apply();
 				}
 			}else{
-				YWORK.alert('res.message')
+				YWORK.err_alert(res.message)
 			}
 		})
 		
@@ -452,7 +452,7 @@ function($scope,$rootScope,$location,UserService,OrderService){
 	$scope.selectPayment = function(item){
 		//选择支付方式
 		if(item.id != 0){
-			YWORK.alert('由于商户号未申请，暂不支持在线支付')
+			YWORK.err_alert('由于商户号未申请，暂不支持在线支付')
 			return;
 		}
 		$scope.payment_id = item.id;
