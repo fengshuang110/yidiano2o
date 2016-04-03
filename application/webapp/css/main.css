@@ -41,15 +41,12 @@ footer{
    margin-bottom:8px;
 }
 .left-menu{
-   border:1px solid #eaeaea;
-   height: 129vh;
-   width: 35vw;
+   border-right:1px solid #78d373;
    overflow-y: scroll;
 }
 .left-menu .list-group{
    height:790px;
    margin-top:0px;
-   position:fixed;
    margin-left: -15px;
    margin-right: -15px;
    padding-right: 0px;	    
@@ -75,8 +72,8 @@ footer{
    line-height:16px;
 }
 .pagenav{
-  margin-top:1px;
-  margin-left: -15px;
+  margin-top:0px;
+  margin-left: -20px;
   margin-right: -15px;
   padding:8px;
   border:0px; 
