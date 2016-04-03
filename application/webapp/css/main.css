@@ -196,6 +196,7 @@ footer{
 .cart-total{
 	position:fixed;
 	bottom:0px;
+	right:0px;
 	border-top:1px solid #ddd;
 }
 .cart-total div{
