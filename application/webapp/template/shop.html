@@ -24,7 +24,7 @@ body{
 		  <li ng-repeat="item in categories"  ng-click="selectCate(item)" ng-class="{'bg-1':cate.id==item.id}" class="list-group-item ">{{item.name}}</li>
 		</ul>
     </div>
-    <div class="col-xs-8 clear-left" >
+    <div class="col-xs-8"  style="margin-left: -5px;">
     <div class="pagenav">夏季作物</div>
     <div class="right-main" >
      <div ng-repeat="item in goodses" class="media item">
