@@ -197,8 +197,6 @@ class Model extends ModelAbstract {
 		$params['start'] =empty($params['start']) ? 0:$params['start'];
 		$params['limit'] =empty($params['limit']) ? 10:$params['limit'];
 		$sql = $this->sql_helper->__toString();
-// 		echo $sql;
-// 		var_dump($this->sql_helper->bind);die;
 		$count_bind = $this->sql_helper->bind;
 		$count_bind[':limit_start'] = 0;
 		$count_sql = str_replace($this->sql_helper->select_field, "count(*) as count", $sql);
