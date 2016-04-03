@@ -43,7 +43,7 @@ footer{
 .left-menu{
    border:1px solid #eaeaea;
    height: 73vh;
-   width: 36vw;
+   width: 33vw;
    overflow-y: scroll;
 }
 .left-menu .list-group{
