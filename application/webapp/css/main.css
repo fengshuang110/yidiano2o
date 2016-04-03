@@ -50,6 +50,7 @@ footer{
    position:fixed;
    margin-left: -15px;
    margin-right: -15px;
+   padding-right: 0px;	    
 }
 .item{
    border-bottom:1px solid #eaeaea;
@@ -72,11 +73,12 @@ footer{
    line-height:16px;
 }
 .pagenav{
-  margin-top: 2px;
+  margin-top:1px;
   margin-left: -15px;
-  margin-right: -8px;
+  margin-right: -15px;
   padding:8px;
   border:0px; 
+  line-height: 23px;
   text-align:center;
   color:#222222;
   background-color:#78d373;
@@ -204,6 +206,11 @@ footer{
 .right-main{
 	positon:relative;
 	margin-top:10px;
+    margin-left: -17px;
+    margin-right: -16px;
+    margin-top: 1px;
+    height:640px;
+    overflow-y:scroll;
 }
 .text-style1{
 	font-size:14px;
