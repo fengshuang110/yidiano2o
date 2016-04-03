@@ -17,14 +17,15 @@ body{
     </div>
   </div>
 <div class="container-fluid goods-list" style="background:#eaeaea;">
-  <div class="row ">
+  <div class="row" style="margin-left: -15px;
+    margin-right: -25px;">
     <div class="col-xs-4 clear-left left-menu">
 	    <ul class="list-group col-xs-4">
 	      <li class="list-group-item selectactive">商品分类</li>
 		  <li ng-repeat="item in categories"  ng-click="selectCate(item)" ng-class="{'bg-1':cate.id==item.id}" class="list-group-item ">{{item.name}}</li>
 		</ul>
     </div>
-    <div class="col-xs-8"  style="margin-left: -5px;">
+    <div class="col-xs-8"  style="margin-left: -5px">
     <div class="pagenav">夏季作物</div>
     <div class="right-main" >
      <div ng-repeat="item in goodses" class="media item">
