@@ -41,8 +41,10 @@ footer{
    margin-bottom:8px;
 }
 .left-menu{
-   height:790px;
    border:1px solid #eaeaea;
+   height: 73vh;
+   width: 36vw;
+   overflow-y: scroll;
 }
 .left-menu .list-group{
    height:790px;
