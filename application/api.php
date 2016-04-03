@@ -16,7 +16,15 @@ if (is_readable(__DIR__ . '/vendor/autoload.php')) {
 //require_once __DIR__.'/../vendor/restler.php';
 
 include_once(__DIR__.'/auto_init.php');
-require __DIR__.'/../Library/bootstrap.php';
+include __DIR__ . '/../Library/Loader/AutoloaderFactory.php';
+Library\Loader\AutoloaderFactory::factory(array(
+'Library\Loader\StandardAutoloader' => array(
+'autoregister_zf' => true,
+	"namespaces"=>array(
+	
+		)
+	)	
+));
 
 Application::init(require 'config/api.config.php')->run();
 

@@ -16,7 +16,7 @@ class Lsm extends BaseAbstract{
 	 * @param unknown $code
 	 * @return boolean
 	 */
-	public function sendCode($phone,$code){
+	public function sendCode($phone,$code){ 
 		$msg=['mobile'=>$phone,'message'=>"您的验证码是:".$code." 【云族佳】"];
 		return  $this->curl_post($this->config['url'], $msg);
 	}

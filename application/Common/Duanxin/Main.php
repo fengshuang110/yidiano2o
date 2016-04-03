@@ -23,7 +23,7 @@ class Main{
             throw new \Exception('短信通道不合法');
         }
    
-        $class_name =  __NAMESPACE__."\\Adapter\\".$config['class_name'];
+        $class_name =  __NAMESPACE__."\\Adapter\\".$config['class_name']; 
         if(!class_exists($class_name)){
         	throw new \Exception('短信通道不合法');
         }
