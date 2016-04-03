@@ -23,6 +23,9 @@ class CacheAdapter{
 		$env = getenv('RUNTIME_ENVIROMENT') ? getenv('RUNTIME_ENVIROMENT') : (defined('SHELL_VARIABLE') ? SHELL_VARIABLE : '');
 		$env = empty($env)?'local':$env;
 		$cache_config = Config::getCacheConfig();
+		if(empty($cache_config)){
+			return ;
+		}
 		$config = $cache_config['cache'][$name];
 		if(!is_array($config)){
 			throw new \Exception('缓存配置错误');

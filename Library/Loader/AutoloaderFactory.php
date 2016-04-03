@@ -62,6 +62,7 @@ abstract class AutoloaderFactory
         if (null === $options) {
             if (!isset(static::$loaders[static::STANDARD_AUTOLOADER])) {
                 $autoloader = static::getStandardAutoloader();
+               
                 $autoloader->register();
                 static::$loaders[static::STANDARD_AUTOLOADER] = $autoloader;
             }

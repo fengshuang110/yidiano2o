@@ -25,7 +25,7 @@ class StringRedisAdapter extends CacheAbstract implements CacheInterface {
 		} else {
 			throw new Exception ( 'Value must be a string or array.' );
 		}
-		return $this->redis->SET($key,$obj);
+		return $this->redis->setex($key,$expire,$obj);
 	}
 	
 	

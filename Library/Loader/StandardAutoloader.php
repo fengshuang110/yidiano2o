@@ -85,7 +85,7 @@ class StandardAutoloader implements SplAutoloader
         }
 
         foreach ($options as $type => $pairs) {
-            switch ($type) {
+        	switch ($type) {
                 case self::AUTOREGISTER_ZF:
                     if ($pairs) {
                         $this->registerNamespace('Library', dirname(__DIR__));

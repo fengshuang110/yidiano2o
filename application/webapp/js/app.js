@@ -1,6 +1,10 @@
 var app = angular.module('app', ['ngRoute'])
 
-domain = "http://121.41.117.10:8081/";
+domain = "http://api.yidiano2o.com/";
+var wait=60;
+app.factory('YWORK',function(){
+	
+})
 
 
 app.factory('Geo',['$q',function($q){
@@ -180,6 +184,9 @@ function($scope,$rootScope,$location,Geo,UserService){
 	});
 	
 	$scope.saveAddress = function(){
+		if (!YWORK.Validator.validateForm($("form"))) {
+	           return;
+	    }
 		UserService.saveAddress($scope.address).success(function(res){
 			if(res.code * 1 == 0){
 				if($rootScope.selectAddress){
@@ -191,6 +198,8 @@ function($scope,$rootScope,$location,Geo,UserService){
 					$location.path('/user/address/');
 					$scope.$apply();
 				}
+			}else{
+				YWORK.err_alert(res.message);
 			}
 		});
 	}
@@ -209,20 +218,33 @@ function($scope,$location,UserService,AuthService,Cookie,Geo){
 app.controller('auth',['$scope','$location','AuthService','UserService','Cookie',
   function($scope,$location,AuthService,UserService,Cookie){
 	$scope.login = function(){
+		if (!YWORK.Validator.validateForm($("form"))) {
+	           return;
+	    }
 		AuthService.login($scope.user).success(function(res){
 			if(res.code == 0){
 				Cookie.setCookie('access_token',res.data.access_token,86400);
 				UserService.loginStatus = true;
 				$location.path('/me');
-				
 				$scope.$apply();
 			}else{
-				alert(res.message);
+				YWORK.err_alert(res.message)
 			}
 		});
 	}
+	$scope.sendcode = function(){
+		if(wait < 60){//一分钟不满
+			 return ;
+		 }
+		setInterval(YWORK.timeClock,1000);
+	}
 	$scope.register = function(){
-		if($scope.user.password != $scope.user.password){
+		
+		if (!YWORK.Validator.validateForm($("form"))) {
+	           return;
+	    }
+		if($scope.user.password != $scope.user.passwordTo){
+			YWORK.err_alert("两次密码不一致") ;
 			return ;
 		}
 		AuthService.register($scope.user).success(function(res){
@@ -232,7 +254,7 @@ app.controller('auth',['$scope','$location','AuthService','UserService','Cookie'
 				$location.path('/home/shop');
 				$scope.$apply();
 			}else{
-				alert(res.message);
+				YWORK.err_alert(res.message)
 			}
 		})
 		//注册
@@ -293,6 +315,8 @@ function($scope,$rootScope,$location,CartService,UserService){
 				$scope.globleCart[data.goods_id] = data.quantity;
 				$rootScope.globleCart = $scope.globleCart;
 				$scope.$apply();
+			}else{
+				YWORK.err_alert(res.message);
 			}
 		})
 	}
@@ -393,6 +417,7 @@ function($scope,$rootScope,$location,UserService,OrderService){
 			$scope.min_cost = res.data.min_cost;
 			$scope.$apply();
 		}else{
+			
 			$location.path('/home/shop');
 			$scope.$apply();
 		}
@@ -492,10 +517,15 @@ function($scope,$routeParams,OrderService,UserService){
 		if(res.code * 1 == 0){
 			$scope.order = res.data;
 			$scope.$apply();
+		}else{
+			YWORK.err_alert(res.message);
 		}
 	});
 }]);
-
+app.controller('site',['$scope',
+function($scope){
+	
+}]);
 
 app.config(['$routeProvider',function($routeProvider) {
 	$routeProvider.when('/site/index', {

@@ -2,7 +2,7 @@
 namespace Common;
 
 class Config{
-	const img_url = "http://121.41.117.10/";
+	const img_url = "http://local.yidiano2o.com/";
 	/**
 	 * 获取阿里云配置
 	 */
