@@ -424,7 +424,11 @@ function($scope,$rootScope,$location,UserService,OrderService){
 	});
 	$scope.create = function(){
 		if($scope.payment_id != 0){
-			alert('由于商户号未申请，暂不支持在线支付')
+			YWORK.alert('由于商户号未申请，暂不支持在线支付')
+			return;
+		}
+		if(!$scope.address.id){
+			YWORK.alert('选择/添加收货地址信息')
 			return;
 		}
 		data = {
@@ -440,7 +444,7 @@ function($scope,$rootScope,$location,UserService,OrderService){
 					$scope.$apply();
 				}
 			}else{
-				alert(res.message);
+				YWORK.alert('res.message')
 			}
 		})
 		
@@ -448,7 +452,7 @@ function($scope,$rootScope,$location,UserService,OrderService){
 	$scope.selectPayment = function(item){
 		//选择支付方式
 		if(item.id != 0){
-			alert('由于商户号未申请，暂不支持在线支付')
+			YWORK.alert('由于商户号未申请，暂不支持在线支付')
 			return;
 		}
 		$scope.payment_id = item.id;
