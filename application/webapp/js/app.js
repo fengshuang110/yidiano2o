@@ -537,8 +537,8 @@ function($scope,GoodsService){
 	});
 }]);
 
-app.controller('goodsdetail',['$scope','$rootScope','$routeParams','GoodsService','CartService','UserService',
-function($scope,$rootScope,$routeParams,GoodsService,CartService,UserService){
+app.controller('goodsdetail',['$scope','$rootScope','$location','$routeParams','GoodsService','CartService','UserService',
+function($scope,$rootScope,$location,$routeParams,GoodsService,CartService,UserService){
 
 	GoodsService.goodsDetail({goods_id:$routeParams.goods_id}).success(function(res){
 		if(res.code * 1 == 0){
