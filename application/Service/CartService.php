@@ -50,6 +50,11 @@ class CartService extends  Service{
 			$cart['goods_number'] = $quantity;
 			$cart['sell_price'] = $goods['sell_price'];;
 			$cart['market_price'] = $goods['market_price'];
+			$lastInsertId = $cartModel->save($cart);
+			if($lastInsertId){
+				return array("code"=>0,"message"=>"添加成功");
+			}
+			return array("code"=>1,"message"=>"添加失败");
 		}else{
 			$cart['user_id'] = $this->user['user_id'];
 			$cart['goods_id'] = $goods['id'];
