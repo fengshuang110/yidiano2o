@@ -44,6 +44,7 @@ class GoodsService extends  Service{
 	public function category($parent_id = 0){
 		return $this->getModel('GoodsCategory')
 					->where(['field'=>'parent_id',"op"=>"=","value"=>$parent_id])
+					->orderby(['field'=>'sort','sort'=>'asc'])
 					->all();
 	}
 	public function recommend($type,$params = array()){

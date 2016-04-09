@@ -21,7 +21,7 @@ return array(
 					
 		'redis' => array (
 			"local"=>array(
-					'host' => '127.0.0.1',
+					'host' =>'127.0.0.1',
 					'port' => '6379' ,
 					'weight' => '1'
 						),
