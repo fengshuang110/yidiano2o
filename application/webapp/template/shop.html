@@ -32,7 +32,8 @@
 	    <div class="col-xs-12" style="margin-top:15px;margin-bottom:10px;border-bottom:1px solid #78d373;">
            <p >
              <span class="goods-item-price">商城价:￥{{item.sell_price}}</span>
-            <del class="pull-right">市场价￥{{item.market_price}}</del></p>
+           </p>
+           <p><del >市场价￥{{item.market_price}}</del></p>
             <p class="goods-price" ng-repeat="spec in item.spec_array">
               <span class="label label-info"  style="margin:0px 3px;" ng-repeat="tag in spec.value">{{tag}}</span>
             </p>
