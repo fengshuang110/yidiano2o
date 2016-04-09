@@ -342,7 +342,8 @@ function($scope,$rootScope,$location,GoodsService,CartService,UserService){
 		globleCart = new Array();
 		$scope.total_num = 0;
 		angular.forEach(res.data.carts, function (item,index) {
-			$scope.total_num += item.goods_number;
+			item.goods_number = parseInt(item.goods_number);
+			$scope.total_num +=	item.goods_number
 			globleCart[item.goods_id] = item.goods_number;
   	   });
 		$rootScope.globleCart = $scope.globleCart = globleCart;
@@ -555,8 +556,8 @@ function($scope,$rootScope,$location,$routeParams,GoodsService,CartService,UserS
 		globleCart = new Array();
 		$scope.total_num = 0;
 		angular.forEach(res.data.carts, function (item,index) {
-			$scope.total_num += item.goods_number;
-			globleCart[item.goods_id] = item.goods_number;
+			$scope.total_num += parseInt(item.goods_number);
+			globleCart[item.goods_id] = parseInt(item.goods_number);
   	   });
 		$rootScope.globleCart = $scope.globleCart = globleCart;
 		$scope.$apply();
@@ -584,7 +585,7 @@ function($scope,$rootScope,$location,$routeParams,GoodsService,CartService,UserS
 		}
 		CartService.add(data).success(function(res){
 			if(res.code * 1 == 0){
-				$scope.total_num = $scope.total_num - $scope.globleCart[item.goods_id] + quantity;
+				$scope.total_num = $scope.total_num -parseInt($scope.globleCart[item.goods_id]) + quantity;
 				$scope.globleCart[item.goods_id] = quantity;
 				$rootScope.globleCart = $scope.globleCart;
 				$scope.$apply();
