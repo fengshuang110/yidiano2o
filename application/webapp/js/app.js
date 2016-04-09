@@ -573,9 +573,10 @@ function($scope,$rootScope,$location,$routeParams,GoodsService,CartService,UserS
 				}
 			})
 		}
+		item.goods_id = parseInt(item.id);
 
 		if($scope.globleCart[item.goods_id]){
-			quantity= parseInt($scope.globleCart[item.goods_id])+1;
+			quantity = parseInt($scope.globleCart[item.goods_id])+1;
 		}else{
 			quantity = 1;
 		}
@@ -585,7 +586,7 @@ function($scope,$rootScope,$location,$routeParams,GoodsService,CartService,UserS
 		}
 		CartService.add(data).success(function(res){
 			if(res.code * 1 == 0){
-				$scope.total_num = $scope.total_num -parseInt($scope.globleCart[item.goods_id]) + quantity;
+				$scope.total_num = $scope.total_num - $scope.globleCart[item.goods_id] + quantity;
 				$scope.globleCart[item.goods_id] = quantity;
 				$rootScope.globleCart = $scope.globleCart;
 				$scope.$apply();
