@@ -37,7 +37,17 @@ class GoodsService extends  Service{
 	}
 	
 	public function detail($goods_id){
-		return $this->getModel('Goods')->detail($goods_id);
+		
+		$goods =  $this->getModel('Goods')->detail($goods_id);
+		$goods['img'] = Config::img_url.$goods['img'];
+		$goods['spec_array'] = json_decode($goods['spec_array'],true);
+		$specs = array();
+		foreach ($goods['spec_array'] as $spec){
+			$spec['value'] = explode(',', $spec['value']);
+			$specs[]= $spec;
+		}
+		$goods['spec_array'] = $specs;
+		return $goods;
 	}
 	
 	public function  getByCategory($category_id,$params = array()){

@@ -564,7 +564,7 @@ app.config(['$routeProvider',function($routeProvider) {
 		}).when('/home/shop', {
 			templateUrl: 'template/shop.html',
 			controller: 'home'
-		}).when('/goods/detail/:order_id', {
+		}).when('/goods/detail/:goods_id', {
 			templateUrl: 'template/goodsdetail.html',
 			controller: 'goodsdetail'
 		}).when('/cart/list', {
