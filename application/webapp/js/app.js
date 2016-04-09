@@ -103,6 +103,9 @@ app.factory('GoodsService', function() {
 		search: function(data){
 			return $.get(domain+'goods/search',data);
 		},
+		goodsDetail:function(data){
+			return $.get(domain+'goods/detail',data);
+		}
 	}
 });
 
@@ -534,6 +537,20 @@ function($scope,GoodsService){
 	});
 }]);
 
+app.controller('goodsdetail',['$scope','$routeParams','GoodsService',
+function($scope,$routeParams,GoodsService){
+
+	GoodsService.goodsDetail({goods_id:$routeParams.goods_id}).success(function(res){
+		if(res.code * 1 == 0){
+			$scope.goods = res.data;
+			$scope.$apply();
+		}else{
+			YWORK.err_alert(res.message);
+		}
+	});
+}]);
+
+
 app.config(['$routeProvider',function($routeProvider) {
 	$routeProvider.when('/site/index', {
 			templateUrl: 'template/index.html',
@@ -547,6 +564,9 @@ app.config(['$routeProvider',function($routeProvider) {
 		}).when('/home/shop', {
 			templateUrl: 'template/shop.html',
 			controller: 'home'
+		}).when('/goods/detail/:order_id', {
+			templateUrl: 'template/goodsdetail.html',
+			controller: 'goodsdetail'
 		}).when('/cart/list', {
 			templateUrl: 'template/cartlist.html',
 			controller: 'cart'

@@ -1,0 +1,36 @@
+<header class="text-center">
+    <span onclick="window.location.href='#/order/list'" style="margin-top:3px;" class="glyphicon glyphicon-menu-left pull-left"></span><span>订单详情</span>
+</header>
+<div class="" style="background:#fff;">
+  <div class="item" >
+     <div class="col-xs-12" style="margin-left:0px;margin-right:0px;padding-right:0px;border-bottom:1px solid #78d373;min-height:185px;">
+      <a href="#">
+       <img class="media-object " style="width:100%;height:180px;margin-left:-8px" ng-src="{{item.img}}" alt="...">
+      </a>
+    </div>
+   <div class="col-xs-12" style="margin-top:25px;margin-bottom:10px;">
+        <p >
+          <span class="goods-item-price">商城价:￥{{item.sell_price}}</span>
+        </p>
+        <p>
+         <del class="">市场价￥{{item.market_price}}</del>
+       </p>
+
+       <p class="goods-price" ng-repeat="spec in item.spec_array">
+         <span class="label label-info"  style="margin:0px 3px;" ng-repeat="tag in spec.value">{{tag}}</span>
+       </p>
+
+      </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+<div class="clear-left" style="margin-top:8px;">
+    <div class="col-xs-6" ng-click="">
+        <button class="btn btn-default btn-block">立即要货</button>
+    </div>
+    <div class="col-xs-6 " ng-click="">
+         <button class="btn btn-success btn-block">加入订单</button>
+    </div>
+</div>
+</nav>
