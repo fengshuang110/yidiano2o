@@ -1,5 +1,5 @@
 <header class="text-center">
-    <span onclick="window.location.href='#/order/list'" style="margin-top:3px;" class="glyphicon glyphicon-menu-left pull-left"></span><span>订单详情</span>
+    <span onclick="window.location.href='#/home/shop'" style="margin-top:3px;" class="glyphicon glyphicon-menu-left pull-left"></span><span>订单详情</span>
 </header>
 <div class="" style="background:#fff;">
   <div class="item" >
@@ -36,13 +36,13 @@
 <div class="clear-left" style="margin-top:8px;">
     <div class="col-xs-6">
         <button class="btn btn-default btn-block"
-        ng-click="addcart(goods)" class="pull-right add-cart">
-        立即要货{{globleCart[goods.goods_id]}}</button>
+        class="pull-right add-cart">
+        购物车<span style="color:red">{{total_num}}</span></button>
     </div>
     <div class="col-xs-6 ">
          <button class="btn btn-success btn-block"
           ng-click="addcart(goods)" class="pull-right add-cart" >
-            加入订单{{globleCart[goods.goods_id]}}
+            加入订单
     </button>
     </div>
 </div>

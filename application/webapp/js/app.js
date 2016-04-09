@@ -340,7 +340,9 @@ function($scope,$rootScope,$location,GoodsService,CartService,UserService){
 	//计算全局购物车数量
 	CartService.lists().success(function(res){
 		globleCart = new Array();
+		$scope.total_num = 0;
 		angular.forEach(res.data.carts, function (item,index) {
+			$scope.total_num += item.goods_number;
 			globleCart[item.goods_id] = item.goods_number;
   	   });
 		$rootScope.globleCart = $scope.globleCart = globleCart;
@@ -551,10 +553,13 @@ function($scope,$rootScope,$location,$routeParams,GoodsService,CartService,UserS
 	//计算全局购物车数量
 	CartService.lists().success(function(res){
 		globleCart = new Array();
+		$scope.total_num = 0;
 		angular.forEach(res.data.carts, function (item,index) {
+			$scope.total_num += item.goods_number;
 			globleCart[item.goods_id] = item.goods_number;
   	   });
 		$rootScope.globleCart = $scope.globleCart = globleCart;
+		$scope.$apply();
 	})
 
 	$scope.addcart = function(item){
@@ -579,9 +584,12 @@ function($scope,$rootScope,$location,$routeParams,GoodsService,CartService,UserS
 		}
 		CartService.add(data).success(function(res){
 			if(res.code * 1 == 0){
+				$scope.total_num = $scope.total_num - $scope.globleCart[item.goods_id] + quantity;
 				$scope.globleCart[item.goods_id] = quantity;
 				$rootScope.globleCart = $scope.globleCart;
 				$scope.$apply();
+			}else{
+				YWORK.err_alert("已经添加到购物车了")
 			}
 		})
 	}

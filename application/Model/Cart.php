@@ -17,6 +17,7 @@ class Cart extends Model{
 		$data = array(":user_id"=>$user_id);
 		
 		return $this->conn()->preparedSql($sql, $data)->fetchAll();
+		
 	}
 	
 }

@@ -30,9 +30,6 @@ class CartService extends  Service{
 	}
 	
 	public function addCart($goods_id,$quantity){
-		if($quantity<1){
-			return array("code"=>1,"message"=>"商品数量错误");
-		}
 		$cartModel = $this->getModel('Cart');
 		$goods = $this->getModel('Goods')->get($goods_id);
 		
@@ -46,6 +43,10 @@ class CartService extends  Service{
 						  ->where(['field'=>'user_id','op'=>'=','value'=>$this->user['user_id']])
 						  ->getOne();
 		if(!empty($cart)){
+			if($quantity<1){
+				$cartModel->del($cart['id']);
+				return array("code"=>0,"message"=>"删除商品成功");
+			}
 			$cart['goods_number'] = $quantity;
 			$cart['sell_price'] = $goods['sell_price'];;
 			$cart['market_price'] = $goods['market_price'];
@@ -57,12 +58,13 @@ class CartService extends  Service{
 			$cart['goods_number'] = $quantity;
 			$cart['sell_price'] = $goods['sell_price'];
 			$cart['market_price'] = $goods['market_price'];
+			$lastInsertId = $cartModel->save($cart);
+			if($lastInsertId){
+				return array("code"=>0,"message"=>"添加成功");
+			}
+		
+			return array("code"=>1,"message"=>"添加失败");
 		}
-		$lastInsertId = $cartModel->save($cart);
-		if($lastInsertId){
-			return array("code"=>0,"message"=>"添加成功");
-		}
-		return array("code"=>1,"message"=>"添加失败");
 	}
 	
 	/**
