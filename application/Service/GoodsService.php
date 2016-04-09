@@ -24,6 +24,14 @@ class GoodsService extends  Service{
 		$goodses =  $this->getModel('Goods')->search($keyword,$params);
 		foreach ($goodses as $key=>$item){
 			$goodses[$key]['img'] = Config::img_url.$item['img'];
+			$goodses[$key]['spec_array'] = json_decode($item['spec_array'],true);
+			
+			$specs = array();
+			foreach ($goodses[$key]['spec_array'] as $spec){
+				$spec['value'] = explode(',', $spec['value']);
+				$specs[]= $spec;
+			}
+			$goodses[$key]['spec_array'] = $specs;
 		}
 		return $goodses;
 	}
@@ -38,6 +46,12 @@ class GoodsService extends  Service{
 		foreach ($goods['items'] as $key=>$item){
 			$goods['items'][$key]['img'] = Config::img_url.$item['img'];
 			$goods['items'][$key]['spec_array'] = json_decode($item['spec_array'],true);
+			$specs = array();
+			foreach ($goods['items'][$key]['spec_array'] as $spec){
+				$spec['value'] = explode(',', $spec['value']);
+				$specs[]= $spec;
+			}
+			$goods['items'][$key]['spec_array'] = $specs;
 		}
 		return $goods;
 	}
@@ -55,7 +69,12 @@ class GoodsService extends  Service{
 		foreach ($goods['items'] as $key=>$item){
 			$goods['items'][$key]['img'] = Config::img_url.$item['img'];
 			$goods['items'][$key]['spec_array'] = json_decode($item['spec_array'],true);
-			error_log($goods['items'][$key]['spec_array']);
+			$specs = array();
+			foreach ($goods['items'][$key]['spec_array'] as $spec){
+				$spec['value'] = explode(',', $spec['value']);
+				$specs[]= $spec;
+			}
+			$goods['items'][$key]['spec_array'] = $specs;
 		}
 		return $goods;
 		
