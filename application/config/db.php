@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 return array(
    'writer'=>array(
-          'host'=>'localhost',
+          'host'=>'121.196.194.117',
           'dbname'=>'spark_yidiano2o',
           'port'=>3306,
           'user'=>'fengshuang',
@@ -11,7 +11,7 @@ return array(
          ),
    'reader'=>array(
           "0"=>array(
-                'host'=>'localhost',
+                'host'=>'121.196.194.117',
 				'dbname'=>'spark_yidiano2o',
 				'port'=>3306,
 				'user'=>'fengshuang',

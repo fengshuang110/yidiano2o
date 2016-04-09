@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return array(
 	"cache"=>array(
@@ -12,13 +12,13 @@ return array(
 				),
 			'rls' => array (
 				"0"=>array (
-					'host' => '127.0.0.1',
+					'host' => '121.41.117.10',
 					'port' => '11211' ,
 					'weight' => '1'
 					),
 				)
 			),
-					
+
 		'redis' => array (
 			"local"=>array(
 					'host' =>'127.0.0.1',

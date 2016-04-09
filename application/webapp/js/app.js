@@ -3,7 +3,7 @@ var app = angular.module('app', ['ngRoute'])
 domain = "http://121.196.194.117:8081/";
 var wait=60;
 app.factory('YWORK',function(){
-	
+
 })
 
 
@@ -21,7 +21,7 @@ app.factory('Geo',['$q',function($q){
 			    });
 			  }
 			},{enableHighAccuracy: true});
-			return deferred.promise; 
+			return deferred.promise;
 		},
 	}
 }]);
@@ -39,34 +39,34 @@ app.factory('Cookie',['$q',function() {
 			}
 			return null;
 		},
-		setCookie: function(name, value, seconds) {  
-		     seconds = seconds || 0;   //seconds有值就直接赋值，没有为0，这个根php不一样。  
-		     var expires = "";  
-		     if (seconds != 0 ) {      //设置cookie生存时间  
-		     var date = new Date();  
-		     date.setTime(date.getTime()+(seconds*1000));  
-		     expires = "; expires="+date.toGMTString();  
-		     }  
-		     document.cookie = name+"="+escape(value)+expires+"; path=/";   //转码并赋值  
+		setCookie: function(name, value, seconds) {
+		     seconds = seconds || 0;   //seconds有值就直接赋值，没有为0，这个根php不一样。
+		     var expires = "";
+		     if (seconds != 0 ) {      //设置cookie生存时间
+		     var date = new Date();
+		     date.setTime(date.getTime()+(seconds*1000));
+		     expires = "; expires="+date.toGMTString();
+		     }
+		     document.cookie = name+"="+escape(value)+expires+"; path=/";   //转码并赋值
 		}
 	}
 }]);
 //用户登录数据共享
-app.factory('UserService', ['$rootScope','$q','Cookie', function ($rootScope,$q,Cookie) {  
+app.factory('UserService', ['$rootScope','$q','Cookie', function ($rootScope,$q,Cookie) {
 	 return {
 		 loginStatus : false,
 		 username : '',
-		 verifylogin : function() {  
-			  var deferred = $q.defer(); // 声明延后执行，表示要去监控后面的执行  
+		 verifylogin : function() {
+			  var deferred = $q.defer(); // 声明延后执行，表示要去监控后面的执行
 			  var data = {access_token:Cookie.getCookie('access_token')}
 		 	  $.get(domain + "auth/verify",data)
-		      	.success(function(res) {  
-		      		deferred.resolve(res);  // 声明执行成功，即http请求数据成功，可以返回数据了  
-		      	}).error(function(res) {  
-			       		 deferred.reject(res);   // 声明执行失败，即服务器返回错误  
-		      	});  
-			  	return deferred.promise; 
-			       // 返回承诺，这里并不是最终数据，而是访问最终数据的API  
+		      	.success(function(res) {
+		      		deferred.resolve(res);  // 声明执行成功，即http请求数据成功，可以返回数据了
+		      	}).error(function(res) {
+			       		 deferred.reject(res);   // 声明执行失败，即服务器返回错误
+		      	});
+			  	return deferred.promise;
+			       // 返回承诺，这里并不是最终数据，而是访问最终数据的API
 			}, // end verifylogin
 	 		saveAddress :function(data){
 	 			return $.post(domain+'user/address/save',data);
@@ -142,7 +142,7 @@ app.factory('OrderService', function() {
 
 app.controller('appCtrl',['$rootScope',
   function($rootScope){
-	
+
 }]);
 
 app.controller('address',['$scope','$rootScope','$location','UserService',
@@ -163,8 +163,8 @@ function($scope,$rootScope,$location,UserService){
 			$scope.$apply();
 		}
 	}
-	
-}]);     
+
+}]);
 
 app.controller('addAddress',['$scope','$rootScope','$location','Geo','UserService',
 function($scope,$rootScope,$location,Geo,UserService){
@@ -173,7 +173,7 @@ function($scope,$rootScope,$location,Geo,UserService){
 			$location.path('/auth/login');
 		}
 	})
-	
+
 	$scope.address={};
 
 	Geo.currentLocation().then(function(address){
@@ -182,7 +182,7 @@ function($scope,$rootScope,$location,Geo,UserService){
 		$scope.address.area =address.addressComponents.district;
 		$scope.address.region = $scope.address.province+$scope.address.city+$scope.address.area;
 	});
-	
+
 	$scope.saveAddress = function(){
 		if (!YWORK.Validator.validateForm($("form"))) {
 	           return;
@@ -211,10 +211,10 @@ function($scope,$location,UserService,AuthService,Cookie,Geo){
 		if(data.code !=0 ){
 			$location.path('/auth/login');
 		}
-	}); 
+	});
  }]);
- 
- 
+
+
 app.controller('auth',['$scope','$location','AuthService','UserService','Cookie',
   function($scope,$location,AuthService,UserService,Cookie){
 	$scope.login = function(){
@@ -239,7 +239,7 @@ app.controller('auth',['$scope','$location','AuthService','UserService','Cookie'
 		setInterval(YWORK.timeClock,1000);
 	}
 	$scope.register = function(){
-		
+
 		if (!YWORK.Validator.validateForm($("form"))) {
 	           return;
 	    }
@@ -274,10 +274,10 @@ function($scope,$rootScope,$location,CartService,UserService){
 		if(data.code !=0 ){
 			$location.path('/auth/login');
 		}
-	}); 
-	
+	});
+
 	$scope.total = 0;
-	
+
 	CartService.lists().success(function(res){
 		if(res.data.carts.length <= 0){
 			$location.path('cart/empty')
@@ -292,7 +292,7 @@ function($scope,$rootScope,$location,CartService,UserService){
 		$rootScope.globleCart = $scope.globleCart = globleCart;
 		$scope.$apply();
 	});
-	
+
 	//计算总价
 	var getTotal = function(){
 		$scope.total = 0;
@@ -320,7 +320,7 @@ function($scope,$rootScope,$location,CartService,UserService){
 			}
 		})
 	}
-	
+
 	$scope.balance = function(){
 		$location.path('/order/before');
 	}
@@ -333,7 +333,7 @@ function($scope,$rootScope,$location,GoodsService,CartService,UserService){
 		$scope.categories = res.data;
 		$scope.$apply();
 	});
-	
+
 	//计算全局购物车数量
 	CartService.lists().success(function(res){
 		globleCart = new Array();
@@ -342,7 +342,7 @@ function($scope,$rootScope,$location,GoodsService,CartService,UserService){
   	   });
 		$rootScope.globleCart = $scope.globleCart = globleCart;
 	})
-	
+
 	$scope.selectCate = function(item){
 		$scope.cate = item;
 		GoodsService.categoryGoods({category_id:item.id}).success(function(res){
@@ -350,12 +350,12 @@ function($scope,$rootScope,$location,GoodsService,CartService,UserService){
 			$scope.$apply();
 		});
 	}
-	
+
 	GoodsService.recommend({type:1}).success(function(res){
 		$scope.goodses = res.data.items;
 		$scope.$apply();
 	});
-	
+
 	$scope.search = function(){
 		GoodsService.search({keyword:$scope.keyword}).success(function(res){
 			$scope.goodses = res.data;
@@ -372,7 +372,7 @@ function($scope,$rootScope,$location,GoodsService,CartService,UserService){
 				}
 			})
 		}
-		
+
 		if($scope.globleCart[item.goods_id]){
 			quantity= parseInt($scope.globleCart[item.goods_id])+1;
 		}else{
@@ -390,8 +390,8 @@ function($scope,$rootScope,$location,GoodsService,CartService,UserService){
 			}
 		})
 	}
-	
-	
+
+
 }]);
 
 app.controller('beforeOrder',['$scope','$rootScope','$location','UserService','OrderService',
@@ -417,7 +417,7 @@ function($scope,$rootScope,$location,UserService,OrderService){
 			$scope.min_cost = res.data.min_cost;
 			$scope.$apply();
 		}else{
-			
+
 			$location.path('/home/shop');
 			$scope.$apply();
 		}
@@ -436,7 +436,7 @@ function($scope,$rootScope,$location,UserService,OrderService){
 				addr_id : $scope.address.id
 		}
 		OrderService.create(data).success(function(res){
-			
+
 			if(res.code * 1 == 0){
 				$rootScope.selectAddress = false;
 				if(data.payment_id == 0){
@@ -447,7 +447,7 @@ function($scope,$rootScope,$location,UserService,OrderService){
 				YWORK.err_alert(res.message)
 			}
 		})
-		
+
 	}
 	$scope.selectPayment = function(item){
 		//选择支付方式
@@ -513,7 +513,7 @@ function($scope,$routeParams,OrderService,UserService){
 			$location.path('/auth/login');
 		}
 	})
-	
+
 	$scope.toggle_tab = function(tab){
 		$scope.tab = tab;
 	}
@@ -526,9 +526,12 @@ function($scope,$routeParams,OrderService,UserService){
 		}
 	});
 }]);
-app.controller('site',['$scope',
-function($scope){
-	
+app.controller('site',['$scope','GoodsService',
+function($scope,GoodsService){
+	GoodsService.category().success(function(res){
+		$scope.categories = res.data;
+		$scope.$apply();
+	});
 }]);
 
 app.config(['$routeProvider',function($routeProvider) {

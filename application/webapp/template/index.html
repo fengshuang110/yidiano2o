@@ -5,40 +5,24 @@
 <div class="banner" id="banner">
 	<ul>
 		<li>
-			<a href="http://www.yunzujia.com/2016.html">  
+			<a href="http://www.yunzujia.com/2016.html">
 			<img class="bannerimg" src="/img/banner1.jpg" alt=""></a>
 		</li>
 		<li>
-			<a href="http://www.yunzujia.com/2016.html">  
+			<a href="http://www.yunzujia.com/2016.html">
 			<img class="bannerimg" src="/img/fruit-banner.jpg" alt=""></a>
 		</li>
 	</ul>
 	<ol class="guid"></ol>
 </div>
-	
+
 <!-- 轮播结束 -->
 <div class="container-fluid" style="background:#fff;margin-top:25px;">
   <!-- 导航菜单开始 -->
   <div class="menu-item">
-    <div class="col-xs-4" ng-click="">
-       <div onclick="window.location.href='#/home/shop'" ><img src="/img/icon_home1.png" style="width:32px;height:32px;"></div>
-       <p>10元专区</p>
-    </div>
-    <div class="col-xs-4" ng-click="">
-       <div ><img src="/img/icon_home2.png" style="width:32px;height:32px;"></div>
-       <p>15元专区</p>
-    </div>
-    <div class="col-xs-4" ng-click="">
-       <div><img src="/img/icon_home3.png" style="width:32px;height:32px;"></div>
-       <p>20元专区</p>
-    </div>
-    <div class="col-xs-4" ng-click="">
-       <div ><img src="/img/icon_home4.png" style="width:32px;height:32px;"></div>
-       <p>双人专区</p>
-    </div>
-    <div class="col-xs-4" ng-click="">
-       <div ><img src="/img/icon_home5.png" style="width:32px;height:32px;"></div>
-       <p>其他专区</p>
+    <div class="col-xs-4" ng-repeat="item in categories">
+       <div onclick="window.location.href='#/home/shop'" ><img src="/img/icon_home{{$index+1}}.png" style="width:32px;height:32px;"></div>
+       <p>{{item.name}}</p>
     </div>
   </div>
   <!-- 导航菜单结束 -->
@@ -49,7 +33,7 @@
      <div class="home_banner"><img src="/img/recommend1.jpg"></div>
   </div>
   <!-- 土建结束 -->
-  
+
 </div>
 
 
@@ -73,14 +57,14 @@
 </nav>
 <script src="/js/TouchSlide.1.1.source.js" type="text/javascript"></script>
 <script type="text/javascript">
-		TouchSlide({ 
+		TouchSlide({
 			slideCell:"#banner",
 			//autoPlay:true,
 			delayTime:600,
 			interTime:3000,
 			titCell:".guid", //开启自动分页titCell 为导航元素包裹层
-			mainCell:"ul", 
-			effect:"leftLoop", 
+			mainCell:"ul",
+			effect:"leftLoop",
 			autoPage:true //自动分页
 		});
 	</script>
