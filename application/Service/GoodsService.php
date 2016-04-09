@@ -42,11 +42,18 @@ class GoodsService extends  Service{
 		$goods['img'] = Config::img_url.$goods['img'];
 		$goods['spec_array'] = json_decode($goods['spec_array'],true);
 		$specs = array();
+		$photos = array();
 		foreach ($goods['spec_array'] as $spec){
 			$spec['value'] = explode(',', $spec['value']);
 			$specs[]= $spec;
 		}
+		foreach ($goods['photos'] as $photo){
+			$photo['photo'] =  Config::img_url.$photo['photo'];
+			$photos[]= $photo;
+		}
+		
 		$goods['spec_array'] = $specs;
+		$goods['photos'] = $photos;
 		return $goods;
 	}
 	

@@ -5,32 +5,45 @@
   <div class="item" >
      <div class="col-xs-12" style="margin-left:0px;margin-right:0px;padding-right:0px;border-bottom:1px solid #78d373;min-height:185px;">
       <a href="#">
-       <img class="media-object " style="width:100%;height:180px;margin-left:-8px" ng-src="{{item.img}}" alt="...">
+       <img class="media-object " style="width:100%;height:180px;margin-left:-8px" ng-src="{{goods.img}}" alt="...">
       </a>
     </div>
    <div class="col-xs-12" style="margin-top:25px;margin-bottom:10px;">
         <p >
-          <span class="goods-item-price">商城价:￥{{item.sell_price}}</span>
+          <span class="goods-item-price">商城价:￥{{goods.sell_price}}</span>
         </p>
         <p>
-         <del class="">市场价￥{{item.market_price}}</del>
+         <del class="">市场价￥{{goods.market_price}}</del>
        </p>
 
-       <p class="goods-price" ng-repeat="spec in item.spec_array">
+       <p class="goods-price" ng-repeat="spec in goods.spec_array">
          <span class="label label-info"  style="margin:0px 3px;" ng-repeat="tag in spec.value">{{tag}}</span>
        </p>
 
       </div>
   </div>
+
+  <div>
+    <div class="col-xs-12" ng-repeat="photo in goods.photos" style="margin-left:0px;margin-right:0px;padding-right:0px;border-bottom:1px solid #eaeaea;min-height:185px;">
+     <a href="#">
+      <img class="media-object " style="width:100%;height:180px;margin-left:-8px" ng-src="{{photo.photo}}" alt="...">
+     </a>
+   </div>
+  </div>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
 <div class="clear-left" style="margin-top:8px;">
-    <div class="col-xs-6" ng-click="">
-        <button class="btn btn-default btn-block">立即要货</button>
+    <div class="col-xs-6">
+        <button class="btn btn-default btn-block"
+        ng-click="addcart(goods)" class="pull-right add-cart">
+        立即要货{{globleCart[goods.goods_id]}}</button>
     </div>
-    <div class="col-xs-6 " ng-click="">
-         <button class="btn btn-success btn-block">加入订单</button>
+    <div class="col-xs-6 ">
+         <button class="btn btn-success btn-block"
+          ng-click="addcart(goods)" class="pull-right add-cart" >
+            加入订单{{globleCart[goods.goods_id]}}
+    </button>
     </div>
 </div>
 </nav>

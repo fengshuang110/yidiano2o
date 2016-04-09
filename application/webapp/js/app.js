@@ -537,8 +537,8 @@ function($scope,GoodsService){
 	});
 }]);
 
-app.controller('goodsdetail',['$scope','$routeParams','GoodsService',
-function($scope,$routeParams,GoodsService){
+app.controller('goodsdetail',['$scope','$rootScope','$routeParams','GoodsService','CartService','UserService',
+function($scope,$rootScope,$routeParams,GoodsService,CartService,UserService){
 
 	GoodsService.goodsDetail({goods_id:$routeParams.goods_id}).success(function(res){
 		if(res.code * 1 == 0){
@@ -548,6 +548,44 @@ function($scope,$routeParams,GoodsService){
 			YWORK.err_alert(res.message);
 		}
 	});
+	//计算全局购物车数量
+	CartService.lists().success(function(res){
+		globleCart = new Array();
+		angular.forEach(res.data.carts, function (item,index) {
+			globleCart[item.goods_id] = item.goods_number;
+  	   });
+		$rootScope.globleCart = $scope.globleCart = globleCart;
+	})
+
+	$scope.addcart = function(item){
+		if(!UserService.loginStatus){
+			UserService.verifylogin().then(function(data){
+				if(data.code !=0 ){
+					$location.path('/auth/login');
+				}else{
+					UserService.loginStatus=true;
+				}
+			})
+		}
+
+		if($scope.globleCart[item.goods_id]){
+			quantity= parseInt($scope.globleCart[item.goods_id])+1;
+		}else{
+			quantity = 1;
+		}
+		data={
+			'goods_id':item.id,
+			'quantity':quantity
+		}
+		CartService.add(data).success(function(res){
+			if(res.code * 1 == 0){
+				$scope.globleCart[item.goods_id] = quantity;
+				$rootScope.globleCart = $scope.globleCart;
+				$scope.$apply();
+			}
+		})
+	}
+
 }]);
 
 
