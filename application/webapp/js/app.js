@@ -318,7 +318,7 @@ function($scope,$rootScope,$location,CartService,UserService){
 				$scope.globleCart[data.goods_id] = data.quantity;
 				$rootScope.globleCart = $scope.globleCart;
 				if(data.quantity == 0){
-					$scope.carts.spilce(item,1);
+					$scope.carts.splice(item,1);
 				}
 				$scope.$apply();
 			}else{
