@@ -37,6 +37,7 @@ class GoodsService extends  Service{
 					->getByCategory($category_id,$params);
 		foreach ($goods['items'] as $key=>$item){
 			$goods['items'][$key]['img'] = Config::img_url.$item['img'];
+			$goods['items'][$key]['spec_array'] = json_decode($item['spec_array']);
 		}
 		return $goods;
 	}

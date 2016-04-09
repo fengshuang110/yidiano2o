@@ -23,26 +23,24 @@
     <div class="col-xs-8">
     <div class="pagenav">单车列表</div>
     <div class="right-main" >
-     <div ng-repeat="item in goodses" class="media item">
-	      <div class="media-left" style="padding-right:0px;">
+     <div ng-repeat="item in goodses" class="item">
+	      <div class="col-xs-12" style="padding-right:0px;">
 	       <a href="#">
-	        <img class="media-object " style="width:80px;height:80px;margin:2px;" ng-src="{{item.img}}" alt="...">
+	        <img class="media-object " style="width:100%;height:140px;margin-left:-15px;" ng-src="{{item.img}}" alt="...">
 	       </a>
 	     </div>
-	    <div class="media-body">
+	    <div class="col-xs-12">
            <p class="goods-item-title">{{item.name}}</p>
-           <p class="goods-item-price">商城价:￥{{item.sell_price}}</p>
-           <p class="goods-price"><del>市场价￥{{item.market_price}}</del></p>
-           <div >
-             <span style="right:15px;"class="pull-right cart-quantity-icon" ng-bind="globleCart[item.goods_id]"></span>
-              <img style="right:10px;" src="img/add.png" ng-click="addcart(item)" class="pull-right add-cart" >
-             
-           </div>
+           <p >
+             <span class="goods-item-price">商城价:￥{{item.sell_price}}</span>
+            <del class="pull-right">市场价￥{{item.market_price}}</del></p>
+            <p class="goods-price"><span >{{item.spec_array[1].name}}</span></p>
+
          </div>
      </div>
      <div  class="text-center alert">加载更多</div>
-    
-    </div> 
+
+    </div>
     </div>
   </div>
 </div>
@@ -66,5 +64,3 @@
             </div>
   </div>
 </nav>
-
-
