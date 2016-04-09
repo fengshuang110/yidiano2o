@@ -581,6 +581,7 @@ function($scope,$rootScope,$location,$routeParams,GoodsService,CartService,UserS
 		if($scope.globleCart[item.goods_id]){
 			quantity = parseInt($scope.globleCart[item.goods_id])+1;
 		}else{
+			$scope.globleCart[item.goods_id] = 0;
 			quantity = 1;
 		}
 		data={
